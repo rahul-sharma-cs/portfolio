@@ -28,17 +28,16 @@ export default function Contact() {
 
         {/* Email Address */}
         <a
-          href="mailto:rsharm21@gmu.edu"
+          href="mailto:rahul5587sharma@gmail.com"
           className="block mt-4 text-4xl sm:text-5xl text-blue-600 dark:text-blue-400 duration-300"
-          style={{
-    transition: 'color 0.3s ease-in-out',}}
+          style={{transition: 'color 0.3s ease-in-out',}}
         >
-          rsharm21@gmu.edu
+          rahul5587sharma@gmail.com
         </a>
       </div>
 
       {/* Social Links Section */}
-      <h2 className="text-2xl font-semibold mt-12 mb-4 text-gray-700 dark:text-gray-300">
+      <h2 className="text-2xl font-semibold mt-20 mb-4 text-gray-700 dark:text-gray-300">
         Social
       </h2>
 
