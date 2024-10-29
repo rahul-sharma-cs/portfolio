@@ -53,33 +53,21 @@ export default function About() {
 
         {/* Right Part: Description */}
         <div className="sm:w-1/2 text-left leading-8">
-          <p className="mb-3">
-            After graduating with a degree in{" "}
-            <span className="font-medium">Accounting</span>, I decided to pursue
-            my passion for programming. I enrolled in a coding bootcamp and
-            learned{" "}
-            <span className="font-medium">full-stack web development</span>.{" "}
-            <span className="italic">My favorite part of programming</span> is
-            the problem-solving aspect. I{" "}
-            <span className="underline">love</span> the feeling of finally
-            figuring out a solution to a problem. My core stack is{" "}
-            <span className="font-medium">
-              React, Next.js, Node.js, and MongoDB
-            </span>
-            . I am also familiar with TypeScript and Prisma. I am always looking
-            to learn new technologies. I am currently looking for a{" "}
-            <span className="font-medium">full-time position</span> as a
-            software developer.
-          </p>
+        <p className="mb-3">
+          Hi, I'm <span className="font-medium">Rahul Sharma</span>, a sophomore pursuing a BS in 
+          <span className="font-medium"> Computer Science</span> at George Mason University. With a strong academic record 
+          (GPA: 3.64) and recognition on the Dean’s List, I am passionate about crafting captivating user interfaces, building 
+          robust systems, and integrating APIs. I enjoy <span className="font-medium">LeetCode challenges</span> to sharpen my problem-solving skills 
+          and deepen my understanding of <span className="italic">data structures and algorithms</span>.
+        </p>
+        
+        <p>
+          I have a keen interest in <span className="font-medium">system design, artificial intelligence, distributed systems, and low-level programming</span>. 
+          I love exploring new technologies, languages, and frameworks, staying updated with the latest trends in tech. 
+          <span className="italic">When I'm not coding</span>, I enjoy playing video games and learning about 
+          <span className="font-medium"> philosophy</span>, blending creativity with analytical thinking to solve complex problems.
+        </p>
 
-          <p>
-            <span className="italic">When I'm not coding</span>, I enjoy playing
-            video games, watching movies, and playing with my dog. I also enjoy{" "}
-            <span className="font-medium">learning new things</span>. I am
-            currently learning about{" "}
-            <span className="font-medium">history and philosophy</span>. I'm
-            also learning how to play the guitar.
-          </p>
           <a className="group bg-white px-7 py-3 inline-flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-gray-300 dark:bg-white/10"
             href="/Rahul_Resume.pdf"
             download >
