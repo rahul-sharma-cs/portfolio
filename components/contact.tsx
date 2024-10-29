@@ -45,10 +45,10 @@ export default function Contact() {
       <div className="flex justify-center space-x-8">
         {/* GitHub */}
         <a
-          href="https://github.com/rahulsharma-cs"
+          href="https://github.com/rahul-sharma-cs"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
+          className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-transform duration-200 ease-in-out hover:scale-105"
           aria-label="GitHub"
         >
           GitHub
@@ -59,7 +59,7 @@ export default function Contact() {
           href="https://linkedin.com/in/rahulsharma-cs"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
+          className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-transform duration-200 ease-in-out hover:scale-105"
           aria-label="LinkedIn"
         >
           LinkedIn
@@ -67,13 +67,24 @@ export default function Contact() {
 
         {/* Twitter */}
         <a
-          href="https://twitter.com/rahulsharma"
+          href="https://x.com/rahulsharma_sd"
           target="_blank"
           rel="noopener noreferrer"
-          className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white"
+          className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-transform duration-200 ease-in-out hover:scale-105"
           aria-label="Twitter"
         >
           Twitter
+        </a>
+        
+        {/* Instagram */}
+        <a
+          href="https://instagram.com/_rahull._.7"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white transition-transform duration-200 ease-in-out hover:scale-105"
+          aria-label="Instagram"
+        >
+          Instagram
         </a>
       </div>
     </motion.section>
