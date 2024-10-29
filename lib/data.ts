@@ -2,9 +2,9 @@ import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
-import corpcommentImg from "@/public/corpcomment.png";
+import xpenseImg from "@/public/xpense.png";
 import rmtdevImg from "@/public/rmtdev.png";
-import wordanalyticsImg from "@/public/wordanalytics.png";
+import synchroImg from "@/public/synchro.png";
 
 export const links = [
   {
@@ -33,11 +33,11 @@ export const links = [
 
 export const projectsData = [
   {
-    title: "XPen$e",
+    title: "XPenSe",
     description:
-      "I worked as a full-stack developer on this startup project for 2 years. Users can give public feedback to companies.",
-    tags: ["Next.js", "MongoDB", "Tailwind", "Prisma"],
-    imageUrl: corpcommentImg,
+      "Developed a wallet app that recommends the best credit card to maximize rewards based on real-time location and merchant data, using NFC and Google Maps API.",
+    tags: ["Next.js", "Supabase", "Auth0", "Google Maps API", "Perplexity AI"],
+    imageUrl: xpenseImg,
   },
   {
     title: "rmtDev",
@@ -47,11 +47,11 @@ export const projectsData = [
     imageUrl: rmtdevImg,
   },
   {
-    title: "Word Analytics",
+    title: "SynchroCode",
     description:
-      "A public web app for quick analytics on text. It shows word count, character count and social media post limits.",
-    tags: ["React", "Next.js", "SQL", "Tailwind", "Framer"],
-    imageUrl: wordanalyticsImg,
+      "Designed and developed a web-based code editor enabling seamless collaboration with real-time updates via WebSockets.",
+    tags: ["Node.js", "WebSockets", "Quill.js", "Firebase"],
+    imageUrl: synchroImg,
   },
 ] as const;
 
