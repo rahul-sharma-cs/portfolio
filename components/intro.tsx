@@ -30,7 +30,7 @@ export default function Intro() {
         <h2 className="text-xl text-gray-500 mb-2">Hello, my name is</h2>
         <h1 className="text-6xl font-bold mb-6 ">Rahul Sharma</h1>
         <p className="text-lg font-medium leading-relaxed text-gray-700 dark:text-gray-300">
-          I’m an <span className="font-bold">aspiring software engineer</span> with a passion for <span className="italic">solving problems</span> and building <span className="italic">impactful projects</span>. As a <span className="font-bold">CS major</span> and <span className="underline">active hackathon participant</span>, I thrive on creating <span className="italic">innovative solutions</span> through development and <span className="font-bold">continuous learning</span>.
+          I’m an <span className="font-bold">aspiring Software Engineer</span> with a passion for <span className="italic">solving problems</span> and building <span className="italic">impactful projects</span>. As a <span className="font-bold">CS major</span> and <span className="underline">active hackathon participant</span>, I thrive on creating <span className="italic">innovative solutions</span> through development and <span className="font-bold">continuous learning</span>.
         </p>
 
       </motion.div>
@@ -47,7 +47,7 @@ export default function Intro() {
           </Link>
         </DockIcon>
         <DockIcon>
-          <Link href="mailto:rahul5587sharma@gmail.com" target="_blank" aria-label="Email Rahul">
+          <Link href="mailto:rs.rahul1@outlook.com" target="_blank" aria-label="Email Rahul">
             <HiMail className="text-4xl text-red-600 dark:text-red-400" />
           </Link>
         </DockIcon>
