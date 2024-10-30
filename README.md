@@ -29,7 +29,7 @@ Feel free to reach out to me for any inquiries or collaborations.
 
 - **Website**: [rahul-sharma.co](https://rahul-sharma.co)  
 - **Email**: [rs.rahul1@outlook.com](mailto:rs.rahul1@outlook.com)  
-- **LinkedIn**: [Rahul Sharma](https://www.linkedin.com/in/rahulsharma-cs/)  
+- **LinkedIn**: [@rahulsharma-cs](https://www.linkedin.com/in/rahulsharma-cs/)  
 - **Twitter**: [@rahulsharma_sd](https://twitter.com/rahulsharma_sd)
 
 ## Deploy on Vercel
