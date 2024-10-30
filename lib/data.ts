@@ -3,7 +3,7 @@ import { CgWorkAlt } from "react-icons/cg";
 import { FaReact } from "react-icons/fa";
 import { LuGraduationCap } from "react-icons/lu";
 import xpenseImg from "@/public/xpense.png";
-import rmtdevImg from "@/public/rmtdev.png";
+import tripImg from "@/public/tripplanner.png";
 import synchroImg from "@/public/synchro.png";
 
 export const links = [
@@ -40,11 +40,11 @@ export const projectsData = [
     imageUrl: xpenseImg,
   },
   {
-    title: "rmtDev",
+    title: "TripPlanner",
     description:
-      "Job board for remote developer jobs. I was the front-end developer. It has features like filtering, sorting and pagination.",
-    tags: ["React", "TypeScript", "Next.js", "Tailwind", "Redux"],
-    imageUrl: rmtdevImg,
+      "A web app that syncs with your calendar to plan your day, suggesting nearby restaurants between events using Google Maps and Calendar APIs.",
+    tags: ["React", "TypeScript", "Next.js", "Firebase", "Auth0", "Google Maps API"],
+    imageUrl: tripImg,
   },
   {
     title: "SynchroCode",
