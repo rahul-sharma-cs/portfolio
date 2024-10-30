@@ -28,11 +28,11 @@ export default function Contact() {
 
         {/* Email Address */}
         <a
-          href="mailto:rahul5587sharma@gmail.com"
+          href="mailto:rs.rahul1@outlook.com"
           className="block mt-4 text-3xl sm:text-5xl text-blue-600 dark:text-blue-400 duration-300"
           style={{transition: 'color 0.3s ease-in-out',}}
         >
-          rahul5587sharma@gmail.com
+          rs.rahul1@outlook.com
         </a>
       </div>
 
