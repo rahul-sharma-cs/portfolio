@@ -6,7 +6,7 @@ Welcome to my personal portfolio website, built using the latest web development
 - [About the Project](#about-the-project)
 - [Built With](#built-with)
 - [Contact](#contact)
-- [Deploy on Vercel](#deploy)
+- [Deploy on Vercel](#deploy-on-vercel)
 
 ## About the Project
 
