@@ -19,9 +19,6 @@ This portfolio reflects a step in my journey to becoming a Software Developer. I
 - **Tailwind CSS**
 - **Magic UI**
 - **Framer Motion**
-- **React.Email**
-- **Resend**
-- **Context API**
 
 ## Contact
 
