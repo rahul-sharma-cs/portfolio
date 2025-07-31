@@ -1,10 +1,11 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./section-heading";
+import SectionHeading from "./ui/section-heading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/hooks";
 import { HiDownload } from "react-icons/hi";
+import { useTheme } from "@/context/theme-context";
 
 // Define animation variants for a pop-in effect
 const containerVariants = {
@@ -23,6 +24,7 @@ const containerVariants = {
 
 export default function About() {
   const { ref } = useSectionInView("About");
+  const { theme } = useTheme();
 
   return (
     <motion.section
@@ -37,7 +39,7 @@ export default function About() {
 
       {/* Box with Image and Description */}
       <motion.div
-        className="flex flex-col sm:flex-row bg-white dark:bg-gray-800 rounded-lg shadow-lg mt-6 p-6"
+        className={`flex flex-col sm:flex-row bg-white/40 dark:bg-white/10 rounded-lg shadow-lg mt-6 p-6 backdrop-blur-sm`}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}

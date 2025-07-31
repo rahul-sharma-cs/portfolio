@@ -4,9 +4,10 @@ import { Inter } from "next/font/google";
 import { Montserrat } from "next/font/google";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import Footer from "@/components/footer";
-import ThemeSwitch from "@/components/theme-switch";
+import ThemeSwitch from "@/components/ui/theme-switch";
 import ThemeContextProvider from "@/context/theme-context";
 import { Toaster } from "react-hot-toast";
+import { Meteors } from "@/components/ui/meteor";
 
 const inter = Inter({ subsets: ["latin"] });
 const montserrat = Montserrat({
@@ -30,6 +31,7 @@ export default function RootLayout({
       >
         <ThemeContextProvider>
           <ActiveSectionContextProvider>
+            <Meteors number={20} />
             <Header />
             {children}
             <Footer />
