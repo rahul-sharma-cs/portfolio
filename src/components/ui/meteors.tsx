@@ -1,8 +1,14 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { motion } from "motion/react";
-import React, { useState } from "react";
+import React from "react";
 import { useTheme } from "@/context/theme-context";
+
+// Deterministic pseudo-random from the index so SSR and client HTML agree.
+const seededRandom = (seed: number) => {
+  const x = Math.sin(seed) * 10000;
+  return x - Math.floor(x);
+};
 
 export const Meteors = ({
   number,
@@ -14,13 +20,12 @@ export const Meteors = ({
   const { theme } = useTheme();
   const meteorCount = number || 20;
 
-  const [meteorStyles] = useState(() =>
-    new Array(meteorCount).fill(true).map((_, idx) => ({
-      left: idx * (800 / meteorCount) - 400,
-      animationDelay: Math.random() * 5 + "s",
-      animationDuration: Math.floor(Math.random() * (10 - 5) + 5) + "s",
-    })),
-  );
+  const meteorStyles = new Array(meteorCount).fill(true).map((_, idx) => ({
+    left: idx * (800 / meteorCount) - 400,
+    animationDelay: seededRandom(idx + 1) * 5 + "s",
+    animationDuration:
+      Math.floor(seededRandom((idx + 1) * 7) * 5 + 5) + "s",
+  }));
 
   return (
     <motion.div
