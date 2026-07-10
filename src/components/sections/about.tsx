@@ -1,11 +1,11 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./ui/section-heading";
+import SectionHeading from "@/components/ui/section-heading";
 import { motion } from "motion/react";
 import { useSectionInView } from "@/lib/hooks";
 import { HiDownload } from "react-icons/hi";
-import { useTheme } from "@/context/theme-context";
+import { siteConfig } from "@/lib/data";
 
 // Define animation variants for a pop-in effect
 const containerVariants = {
@@ -23,8 +23,7 @@ const containerVariants = {
 };
 
 export default function About() {
-  const { ref } = useSectionInView("About");
-  const { theme } = useTheme();
+  const { ref, id } = useSectionInView("About");
 
   return (
     <motion.section
@@ -33,7 +32,7 @@ export default function About() {
       initial="initial"
       animate="animate"
       variants={containerVariants} // Apply the animation variants
-      id="about"
+      id={id}
     >
       <SectionHeading>About Me</SectionHeading>
 
@@ -71,7 +70,7 @@ export default function About() {
         </p>
 
           <a className="group bg-white px-7 py-3 inline-flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border border-gray-300 dark:bg-white/10"
-            href="/Rahul_Resume.pdf"
+            href={siteConfig.resume}
             download >
             Download My Resume{" "}
             <HiDownload className="opacity-60 group-hover:translate-y-1 transition" />

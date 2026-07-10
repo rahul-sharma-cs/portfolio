@@ -1,11 +1,10 @@
 "use client";
 
 import React from "react";
-import SectionHeading from "./ui/section-heading";
+import SectionHeading from "@/components/ui/section-heading";
 import { skillsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/hooks";
 import { motion } from "motion/react";
-import { useTheme } from "@/context/theme-context";
 
 const fadeInAnimationVariants = {
   initial: {
@@ -22,12 +21,11 @@ const fadeInAnimationVariants = {
 };
 
 export default function Skills() {
-  const { ref } = useSectionInView("Skills");
-  const { theme } = useTheme();
+  const { ref, id } = useSectionInView("Skills");
 
   return (
     <section
-      id="skills"
+      id={id}
       ref={ref}
       className="mb-28 max-w-[53rem] scroll-mt-28 text-center sm:mb-40"
     >

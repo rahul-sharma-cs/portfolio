@@ -1,10 +1,20 @@
-import React from "react";
-import { CgWorkAlt } from "react-icons/cg";
-import { FaReact } from "react-icons/fa";
-import { LuGraduationCap } from "react-icons/lu";
-import xpenseImg from "@/public/xpense.png";
-import tripImg from "@/public/tripplanner.png";
-import synchroImg from "@/public/synchro.png";
+import xpenseImg from "../../public/xpense.png";
+import tripImg from "../../public/tripplanner.png";
+import synchroImg from "../../public/synchro.png";
+
+export const siteConfig = {
+  name: "Rahul Sharma",
+  description:
+    "Rahul Sharma is an Aspiring SWE looking for internship opportunities.",
+  email: "rs.rahul1@outlook.com",
+  resume: "/Rahul_Resume.pdf",
+  socials: {
+    github: "https://github.com/rahul-sharma-cs",
+    linkedin: "https://linkedin.com/in/rahulsharma-cs",
+    twitter: "https://x.com/rahulsharma_sd",
+    instagram: "https://instagram.com/_rahull._.7",
+  },
+} as const;
 
 export const links = [
   {

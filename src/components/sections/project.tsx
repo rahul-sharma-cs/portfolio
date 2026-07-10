@@ -4,7 +4,6 @@ import { useRef } from "react";
 import { projectsData } from "@/lib/data";
 import Image from "next/image";
 import { motion, useScroll, useTransform } from "motion/react";
-import { useTheme } from "@/context/theme-context";
 
 type ProjectProps = (typeof projectsData)[number];
 
@@ -15,7 +14,6 @@ export default function Project({
   imageUrl,
 }: ProjectProps) {
   const ref = useRef<HTMLDivElement>(null);
-  const { theme } = useTheme();
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ["0 1", "1.33 1"],
