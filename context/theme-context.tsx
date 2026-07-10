@@ -36,6 +36,9 @@ export default function ThemeContextProvider({
     const localTheme = window.localStorage.getItem("theme") as Theme | null;
 
     if (localTheme) {
+      // Initial theme must be read after mount (SSR has no localStorage);
+      // replaced by a pre-paint inline script + DOM sync in a later task.
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setTheme(localTheme);
 
       if (localTheme === "dark") {

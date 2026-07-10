@@ -2,7 +2,7 @@
 
 import React from "react";
 import SectionHeading from "./ui/section-heading";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { useSectionInView } from "@/lib/hooks";
 import { HiDownload } from "react-icons/hi";
 import { useTheme } from "@/context/theme-context";
@@ -14,7 +14,7 @@ const containerVariants = {
     opacity: 1,
     scale: 1,
     transition: {
-      type: "spring",
+      type: "spring" as const,
       stiffness: 120,
       damping: 20,
       delay: 0.2,
@@ -56,7 +56,7 @@ export default function About() {
         {/* Right Part: Description */}
         <div className="sm:w-1/2 text-left leading-8">
         <p className="mb-3">
-          Hi, I'm <span className="font-medium">Rahul Sharma</span>, a sophomore pursuing a BS in 
+          Hi, I&apos;m <span className="font-medium">Rahul Sharma</span>, a sophomore pursuing a BS in 
           <span className="font-medium"> Computer Science</span> at George Mason University. With a strong academic record 
           (GPA: 3.64) and recognition on the Dean’s List, I am passionate about crafting captivating user interfaces, building 
           robust systems, and integrating APIs. I enjoy <span className="font-medium">LeetCode challenges</span> to sharpen my problem-solving skills 
@@ -66,7 +66,7 @@ export default function About() {
         <p>
           I have a keen interest in <span className="font-medium">system design, artificial intelligence, distributed systems, and low-level programming</span>. 
           I love exploring new technologies, languages, and frameworks, staying updated with the latest trends in tech. 
-          <span className="italic">When I'm not coding</span>, I enjoy playing video games and learning about 
+          <span className="italic">When I&apos;m not coding</span>, I enjoy playing video games and learning about 
           <span className="font-medium"> philosophy</span>, blending creativity with analytical thinking to solve complex problems.
         </p>
 
