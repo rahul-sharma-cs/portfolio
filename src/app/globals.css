@@ -2,20 +2,99 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Vellum (light) — RGB triplets so Tailwind alpha modifiers work */
+  --c-sheet: 247 245 240;   /* #F7F5F0 */
+  --c-ink: 28 27 24;        /* #1C1B18 ~15:1 on sheet */
+  --c-pencil: 92 89 79;     /* #5C594F ~6.4:1 */
+  --c-rule: 201 196 178;    /* #C9C4B2 decorative only */
+  --c-redline: 181 52 27;   /* #B5341B ~5.2:1 */
+  --grid-minor: rgba(28, 27, 24, 0.055);
+  --grid-major: rgba(28, 27, 24, 0.1);
+}
+
+.dark {
+  /* Cyanotype (dark) */
+  --c-sheet: 18 42 71;      /* #122A47 */
+  --c-ink: 242 239 228;     /* #F2EFE4 ~12:1 */
+  --c-pencil: 185 195 207;  /* #B9C3CF ~7:1 */
+  --c-rule: 60 85 122;      /* #3C557A */
+  --c-redline: 255 122 85;  /* #FF7A55 ~6:1 */
+  --grid-minor: rgba(242, 239, 228, 0.06);
+  --grid-major: rgba(242, 239, 228, 0.11);
+}
+
 @layer base {
-  :root {
-    --border: 214.3 31.8% 91.4%;
+  html {
+    scroll-behavior: smooth;
   }
-
-  .dark {
-    --border: 217.2 32.6% 17.5%;
+  body {
+    @apply bg-sheet font-sans text-ink antialiased;
   }
-
-  * {
-    @apply border-border;
+  *:focus-visible {
+    outline: 2px solid rgb(var(--c-redline));
+    outline-offset: 2px;
+  }
+  ::selection {
+    background: rgb(var(--c-redline));
+    color: rgb(var(--c-sheet));
   }
 }
 
-.borderBlack {
-  @apply border border-black/10;
+@layer utilities {
+  .bg-grid {
+    background-image:
+      linear-gradient(var(--grid-major) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+      linear-gradient(var(--grid-minor) 1px, transparent 1px),
+      linear-gradient(90deg, var(--grid-minor) 1px, transparent 1px);
+    background-size: 96px 96px, 96px 96px, 24px 24px, 24px 24px;
+  }
+  /* printed-reproduction treatment for project screenshots */
+  .duotone {
+    filter: grayscale(1) contrast(1.06) sepia(0.12);
+  }
+  .dark .duotone {
+    filter: grayscale(1) brightness(0.92) contrast(1.05) sepia(1) hue-rotate(178deg) saturate(0.5);
+  }
+  /* portrait: untouched on vellum, cyanotype-tinted on the blueprint */
+  .duotone-dark-only {
+    filter: none;
+  }
+  .dark .duotone-dark-only {
+    filter: grayscale(0.9) brightness(0.95) contrast(1.03) sepia(0.9) hue-rotate(178deg) saturate(0.55);
+  }
+  /* Archivo width-axis stretch — hover/focus only, never scroll-bound */
+  .stretch-wdth {
+    font-variation-settings: "wdth" 100;
+    transition: font-variation-settings 0.45s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .stretch-wdth:hover,
+  .stretch-wdth:focus-visible {
+    font-variation-settings: "wdth" 125;
+  }
+  .wdth-expanded {
+    font-variation-settings: "wdth" 120;
+  }
+}
+
+/* Hero elements hidden until the plotter entrance starts (class set pre-paint in layout head) */
+.intro-pending [data-intro] {
+  opacity: 0;
+}
+
+/* Cyanotype exposure wipe — the JS animates ::view-transition-new(root) clip-path */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .stretch-wdth {
+    transition: none;
+  }
 }

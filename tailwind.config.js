@@ -1,24 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
+  content: ["./src/**/*.{ts,tsx}"],
   darkMode: "class",
   theme: {
     extend: {
       colors: {
-        border: "hsl(var(--border))",
+        sheet: "rgb(var(--c-sheet) / <alpha-value>)",
+        ink: "rgb(var(--c-ink) / <alpha-value>)",
+        pencil: "rgb(var(--c-pencil) / <alpha-value>)",
+        rule: "rgb(var(--c-rule) / <alpha-value>)",
+        redline: "rgb(var(--c-redline) / <alpha-value>)",
       },
-      animation: {
-        "meteor-effect": "meteor 5s linear infinite",
-      },
-      keyframes: {
-        meteor: {
-          "0%": { transform: "rotate(215deg) translateX(0)", opacity: "1" },
-          "70%": { opacity: "1" },
-          "100%": {
-            transform: "rotate(215deg) translateX(-500px)",
-            opacity: "0",
-          },
-        },
+      fontFamily: {
+        sans: ['"Archivo Variable"', "Arial", "sans-serif"],
+        mono: ['"Martian Mono Variable"', "ui-monospace", "SFMono-Regular", "Menlo", "monospace"],
       },
     },
   },
