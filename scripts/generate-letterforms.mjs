@@ -18,26 +18,29 @@ if (!file) {
   process.exit(1);
 }
 
-let font = fontkit.openSync(file);
-try {
-  if (font.variationAxes && Object.keys(font.variationAxes).length > 0) {
-    const varied = font.getVariation({ wght: 780, wdth: 120 });
-    // fontkit's getVariation() rebuilds a plain TTFFont by reading raw bytes
-    // from `this.stream.buffer` at the original sfnt directory offset. That
-    // assumption holds for plain TTF/OTF sources, but not for WOFF2 sources
-    // (this font's buffer is WOFF2-compressed/transformed, not a raw sfnt
-    // directory), so the returned instance can look valid yet fail once its
-    // tables are actually touched. getVariation() itself doesn't throw in
-    // that case — the failure only surfaces on first real use — so probe it
-    // with a real layout call here, inside the try, before committing to it.
-    const probe = varied.layout("A");
-    if (!probe.glyphs[0] || !probe.glyphs[0].path.toSVG()) {
-      throw new Error("variation instance produced an empty glyph path");
-    }
-    font = varied;
+// fontkit's getVariation() rebuilds a plain TTFFont by reading raw bytes from
+// `this.stream.buffer` at the original sfnt directory offset. That assumption
+// holds for plain TTF/OTF sources, but not for WOFF2 sources (the buffer is
+// WOFF2-compressed/transformed table data, not a raw sfnt directory) — the
+// resulting instance looks valid but fails once its tables are touched. Work
+// around it by decompressing the WOFF2 to an uncompressed TTF buffer first
+// (dev-only; @fontsource ships WOFF2, not TTF) so fontkit's offset assumption
+// holds for real.
+const { decompress } = await import("wawoff2");
+const woff2Buffer = fs.readFileSync(file);
+const ttfBuffer = Buffer.from(await decompress(woff2Buffer));
+
+let font = fontkit.create(ttfBuffer);
+if (font.variationAxes && Object.keys(font.variationAxes).length > 0) {
+  const varied = font.getVariation({ wght: 780, wdth: 120 });
+  // Probe with a real layout call — getVariation() itself doesn't throw even
+  // when the resulting instance is broken, so verify it actually works
+  // before committing to it.
+  const probe = varied.layout("A");
+  if (!probe.glyphs[0] || !probe.glyphs[0].path.toSVG()) {
+    throw new Error("variation instance produced an empty glyph path");
   }
-} catch (err) {
-  console.warn("Variation instancing failed; using default instance:", err.message);
+  font = varied;
 }
 
 const LINES = ["RAHUL", "SHARMA"];
