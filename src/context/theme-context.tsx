@@ -43,8 +43,15 @@ export default function ThemeContextProvider({ children }: { children: React.Rea
       startViewTransition?: (cb: () => void) => { ready: Promise<void> };
     };
     const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (!doc.startViewTransition || reduce) {
+    if (reduce) {
       applyToggle();
+      return;
+    }
+    if (!doc.startViewTransition) {
+      const root = document.documentElement;
+      root.classList.add("theme-fade");
+      applyToggle();
+      window.setTimeout(() => root.classList.remove("theme-fade"), 350);
       return;
     }
     const x = e?.clientX ?? window.innerWidth - 40;

@@ -90,6 +90,12 @@
   mix-blend-mode: normal;
 }
 
+/* Crossfade fallback for browsers without the View Transitions API */
+html.theme-fade,
+html.theme-fade body {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
