@@ -4,11 +4,20 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import ActiveSectionContextProvider from "@/context/active-section-context";
 import ThemeContextProvider from "@/context/theme-context";
+import SheetGrid from "@/components/drafting/sheet-grid";
+import MeasurementNav from "@/components/chrome/measurement-nav";
+import SheetFooter from "@/components/chrome/sheet-footer";
+import CrosshairCursor from "@/components/chrome/crosshair-cursor";
+import { siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Rahul Sharma — Software Engineer",
-  description:
-    "Software engineer and CS senior at George Mason University (Dec 2026). Founding engineer at TheCollegeTech. Portfolio drafted as an engineering drawing set.",
+  title: `${siteConfig.name} — ${siteConfig.role}`,
+  description: siteConfig.description,
+  openGraph: {
+    title: `${siteConfig.name} — ${siteConfig.role}`,
+    description: siteConfig.description,
+    type: "website",
+  },
 };
 
 export const viewport: Viewport = {
@@ -36,9 +45,21 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
-      <body>
+      <body className="relative pt-12">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-16 focus:z-50 focus:border focus:border-redline focus:bg-sheet focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:uppercase focus:text-redline"
+        >
+          Skip to content
+        </a>
         <ThemeContextProvider>
-          <ActiveSectionContextProvider>{children}</ActiveSectionContextProvider>
+          <ActiveSectionContextProvider>
+            <SheetGrid />
+            <MeasurementNav />
+            <main id="main">{children}</main>
+            <SheetFooter />
+            <CrosshairCursor />
+          </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>
     </html>
