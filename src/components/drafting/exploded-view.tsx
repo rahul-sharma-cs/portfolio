@@ -92,7 +92,7 @@ export default function ExplodedView({
         onPointerEnter={fine ? () => setBoost(1) : undefined}
         onPointerLeave={fine ? () => setBoost(0) : undefined}
         onClick={
-          !fine
+          !fine && !reduce
             ? () => {
                 const next = !popped;
                 setBoost(next ? 1 : 0);
@@ -119,7 +119,7 @@ export default function ExplodedView({
           <LeaderLabel key={layer.layer} index={i} label={`${layer.layer.toUpperCase()} — ${layer.label.toUpperCase()}`} />
         ))}
       </ol>
-      {!fine && (
+      {!fine && !reduce && (
         <p className="mt-1 font-mono text-[0.55rem] uppercase tracking-[0.12em] text-pencil">
           {popped ? "Tap to assemble" : "Tap to explode"}
         </p>

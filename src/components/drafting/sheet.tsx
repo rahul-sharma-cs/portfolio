@@ -32,7 +32,7 @@ export default function Sheet({
   };
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: sectionRef, offset: ["start end", "end start"] });
-  const ghostY = useTransform(scrollYProgress, [0, 1], reduce ? ["0px", "0px"] : ["56px", "-56px"]);
+  const ghostY = useTransform(scrollYProgress, [0, 1], reduce ? ["0px", "0px"] : ["20px", "-20px"]);
 
   return (
     <section ref={setRefs} id={id} className={`relative scroll-mt-20 overflow-x-clip py-20 sm:py-28 ${className}`}>

@@ -38,7 +38,7 @@ export default function Sheet05Detail() {
             where I get to design systems and then live with my decisions. I care about interfaces
             that feel considered, backends that don&apos;t fall over, and the space where the two meet.
           </p>
-          <p className="mt-5 max-w-[58ch] text-[1.05rem] leading-[1.75] text-ink">
+          <p className="mt-5 max-w-[58ch] text-[1.05rem] leading-[1.75] text-pencil">
             Between classes and shifts keeping 450+ lab machines alive, I&apos;m usually deep in
             LeetCode or reading about system design, AI, distributed systems, and low-level
             programming. Off the clock: video games and philosophy — usually not at the same time.

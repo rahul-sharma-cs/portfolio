@@ -66,12 +66,12 @@ function Plate({ project, index }: { project: Project; index: number }) {
 
         <div className={`space-y-6 md:col-span-6 order-1 ${flipped ? "md:order-1" : "md:order-2"}`}>
           {project.image && <PlateImage image={project.image} />}
-          <p data-prose className="max-w-[58ch] text-[0.95rem] leading-relaxed text-pencil">
+          <p data-prose className="max-w-[58ch] text-[0.95rem] leading-relaxed text-ink">
             {project.spec}
           </p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
             {project.tags.map((tag) => (
-              <LeaderLabel key={tag} label={tag} />
+              <LeaderLabel key={tag} label={tag} tone="quiet" />
             ))}
           </ul>
           <div className="pt-1">

@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "motion/react";
 import { links, siteConfig } from "@/lib/data";
 import Sheet from "@/components/drafting/sheet";
 import TitleBlock from "@/components/drafting/title-block";
+import Stamp from "@/components/drafting/stamp";
 import PlottedName from "@/components/drafting/plotted-name";
 import DimensionLine from "@/components/drafting/dimension-line";
 import { useMeasuredWidth } from "@/lib/hooks";
@@ -89,7 +90,7 @@ function HeroContent({ play }: { play: boolean }) {
       </div>
 
       <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
-        <motion.div {...enter(1.5)} data-intro className="flex flex-wrap gap-3">
+        <motion.div {...enter(0.9)} data-intro className="flex flex-wrap gap-3">
           <a
             href={links[1].hash}
             className="flex min-h-11 items-center border border-ink px-4 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-ink transition-colors hover:bg-ink hover:text-sheet"
@@ -119,11 +120,13 @@ function HeroContent({ play }: { play: boolean }) {
                 { label: "Date", value: BUILD_DATE },
                 { label: "Scale", value: "1:1" },
               ],
-              [
-                { label: "Status", value: `${siteConfig.status} — ${siteConfig.gradDate}`, accent: true },
-              ],
             ]}
           />
+          <div className="flex justify-end">
+            <Stamp className="mt-3">
+              {siteConfig.status} — {siteConfig.gradDate}
+            </Stamp>
+          </div>
         </motion.div>
       </div>
     </div>

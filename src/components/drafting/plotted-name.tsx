@@ -15,6 +15,7 @@ export default function PlottedName({ play }: { play: boolean }) {
 
   return (
     <h1 aria-label="Rahul Sharma" className="block">
+      <span className="sr-only">Rahul Sharma</span>
       {lines.map((line, li) => {
         const height = ascent - descent;
         return (

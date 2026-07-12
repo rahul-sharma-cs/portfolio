@@ -17,7 +17,7 @@ export default function Sheet06SignOff() {
     <Sheet link={links[5]} eyebrow="Sign-Off — Release" threshold={0.6}>
       <div className="flex flex-col items-start gap-10">
         <div className="flex flex-wrap items-center gap-6">
-          <h3 className="max-w-[24ch] font-sans text-[clamp(1.5rem,3.5vw,2.6rem)] font-extrabold uppercase leading-tight tracking-tight">
+          <h3 className="wdth-expanded max-w-[24ch] font-sans text-[clamp(1.5rem,3.5vw,2.6rem)] font-extrabold uppercase leading-tight tracking-tight">
             This design is released for interview.
           </h3>
           <Stamp>Approved</Stamp>

@@ -36,11 +36,11 @@ export default function Sheet04Revisions() {
               <h3 className="mt-1.5 font-sans text-lg font-bold uppercase tracking-tight text-ink">
                 {rev.role} <span className="font-normal text-pencil">— {rev.org}</span>
               </h3>
-              <ul data-prose className="mt-2 max-w-[62ch] space-y-1.5 text-[0.85rem] leading-relaxed text-pencil">
+              <ul data-prose className="mt-2 max-w-[62ch] space-y-1.5 text-[0.85rem] leading-relaxed">
                 {rev.bullets.map((b) => (
                   <li key={b} className="flex gap-2.5">
                     <span aria-hidden className="mt-[0.55em] h-px w-3 shrink-0 bg-rule" />
-                    <span>{b}</span>
+                    <span className="text-ink">{b}</span>
                   </li>
                 ))}
               </ul>
