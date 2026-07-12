@@ -90,10 +90,12 @@
   animation: bp-failsafe 0.3s ease 2.8s forwards;
 }
 /* Honest skip: any input during the entrance force-completes the reveal.
-   !important beats motion's inline opacity mid-flight; stroke paths freeze harmlessly. */
+   !important beats motion's inline opacity/transform mid-flight; stroke paths
+   keep animating invisibly underneath the forced-visible fills (harmless). */
 .intro-skip [data-intro],
 .intro-skip [data-intro] svg path {
   opacity: 1 !important;
+  transform: none !important;
 }
 
 /* Cyanotype exposure wipe — the JS animates ::view-transition-new(root) clip-path */
