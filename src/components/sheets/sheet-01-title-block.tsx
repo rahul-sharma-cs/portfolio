@@ -105,29 +105,37 @@ function HeroContent({ play }: { play: boolean }) {
           </a>
         </motion.div>
 
-        <motion.div {...enter(1.3)} data-intro className="w-full md:w-[26rem]">
-          <TitleBlock
-            rows={[
-              [
-                { label: "Title", value: siteConfig.role },
-                { label: "Drawn by", value: "R. Sharma" },
-              ],
-              [
-                { label: "Current", value: siteConfig.current },
-              ],
-              [
-                { label: "Rev", value: BUILD_SHA },
-                { label: "Date", value: BUILD_DATE },
-                { label: "Scale", value: "1:1" },
-              ],
-            ]}
-          />
-          <div className="flex justify-end">
-            <Stamp className="mt-3">
+        <div className="w-full md:w-[26rem]">
+          <motion.div {...enter(1.3)} data-intro>
+            <TitleBlock
+              rows={[
+                [
+                  { label: "Title", value: siteConfig.role },
+                  { label: "Drawn by", value: "R. Sharma" },
+                ],
+                [
+                  { label: "Current", value: siteConfig.current },
+                ],
+                [
+                  { label: "Rev", value: BUILD_SHA },
+                  { label: "Date", value: BUILD_DATE },
+                  { label: "Scale", value: "1:1" },
+                ],
+              ]}
+            />
+          </motion.div>
+          {/* Own non-gated wrapper: the thunk is timed by Stamp's own mount-mode
+              animation (delay 1.35s), not by the enter() opacity fade above — a
+              shared wrapper let the whileInView thunk finish while still hidden
+              behind the opacity gate. data-intro stays here so it's CSS-hidden
+              pre-hydration on first visits (no motion opacity props, so nothing
+              conflicts with mount-mode's own initial opacity 0). */}
+          <div data-intro className="flex justify-end">
+            <Stamp className="mt-3" mode={play ? "mount" : "static"} delay={1.35}>
               {siteConfig.status} — {siteConfig.gradDate}
             </Stamp>
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );

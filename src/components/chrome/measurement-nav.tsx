@@ -55,17 +55,17 @@ export default function MeasurementNav() {
         {/* Mobile: current sheet + index toggle */}
         <button
           type="button"
-          className="flex min-h-11 items-center gap-2 font-mono text-anno-sm uppercase tracking-[0.14em] text-ink md:hidden"
+          className="flex min-h-11 items-center gap-2 whitespace-nowrap font-mono text-anno-sm uppercase tracking-[0.14em] text-ink md:hidden"
           aria-expanded={open}
           aria-controls="sheet-index"
           onClick={() => setOpen((v) => !v)}
         >
           <span aria-hidden className="h-2 w-px bg-redline" />
-          SHT {active.num}/06 — {active.name.toUpperCase()}
+          SHT {active.num}/06<span className="hidden sm:inline"> — {active.name.toUpperCase()}</span>
           <span aria-hidden className="text-pencil">{open ? "▴" : "▾"}</span>
         </button>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <a
             href={`mailto:${siteConfig.email}`}
             aria-label="Email"
