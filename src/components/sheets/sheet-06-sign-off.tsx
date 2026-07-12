@@ -25,7 +25,7 @@ export default function Sheet06SignOff() {
 
         <a
           href={`mailto:${siteConfig.email}`}
-          className="stretch-wdth break-all font-sans text-[clamp(1.3rem,4.6vw,4.2rem)] font-bold lowercase leading-none text-ink underline decoration-redline decoration-2 underline-offset-8 hover:text-redline"
+          className="stretch-wdth break-all font-sans text-[clamp(2rem,9vw,4.2rem)] font-bold lowercase leading-none text-ink underline decoration-redline decoration-2 underline-offset-8 hover:text-redline"
         >
           {siteConfig.email}
         </a>

@@ -33,7 +33,7 @@ try {
   if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.documentElement.classList.add('dark');
   }
-  if (!sessionStorage.getItem('bp-intro-seen')) {
+  if (!sessionStorage.getItem('bp-intro-seen') && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     document.documentElement.classList.add('intro-pending');
   }
 } catch (e) {}

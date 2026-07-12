@@ -60,11 +60,11 @@ function Plate({ project, index }: { project: Project; index: number }) {
       <RuleX className="mb-8 mt-4" />
 
       <div className="grid items-start gap-8 md:grid-cols-12">
-        <Tilt className={`md:col-span-6 ${flipped ? "md:order-2" : ""}`}>
+        <Tilt className={`md:col-span-6 order-2 ${flipped ? "md:order-2" : "md:order-1"}`}>
           <ExplodedView layers={project.architecture} title={project.title} />
         </Tilt>
 
-        <div className={`space-y-6 md:col-span-6 ${flipped ? "md:order-1" : ""}`}>
+        <div className={`space-y-6 md:col-span-6 order-1 ${flipped ? "md:order-1" : "md:order-2"}`}>
           {project.image && <PlateImage image={project.image} />}
           <p data-prose className="max-w-[58ch] text-[0.95rem] leading-relaxed text-pencil">
             {project.spec}

@@ -65,7 +65,15 @@ export default function MeasurementNav() {
           <span aria-hidden className="text-pencil">{open ? "▴" : "▾"}</span>
         </button>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <a
+            href={`mailto:${siteConfig.email}`}
+            aria-label="Email"
+            className="flex min-h-11 items-center border border-redline px-3 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-redline transition-colors hover:bg-redline hover:text-sheet"
+          >
+            <span aria-hidden className="sm:hidden">@</span>
+            <span aria-hidden className="hidden sm:inline">Email</span>
+          </a>
           <a
             href={siteConfig.resume}
             className="flex min-h-11 items-center border border-redline px-3 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-redline transition-colors hover:bg-redline hover:text-sheet"
@@ -93,6 +101,15 @@ export default function MeasurementNav() {
               </a>
             </li>
           ))}
+          <li>
+            <a
+              href={`mailto:${siteConfig.email}`}
+              className="flex min-h-11 items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-redline"
+            >
+              <span aria-hidden className="h-2 w-px bg-redline" />
+              EMAIL
+            </a>
+          </li>
           <li>
             <a
               href={siteConfig.resume}

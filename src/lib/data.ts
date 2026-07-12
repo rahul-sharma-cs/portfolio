@@ -133,7 +133,7 @@ export const revisions = [
     approved: "TCT",
     bullets: [
       "Architected a Learning Management System end-to-end: Supabase auth, account management, and role-based access control.",
-      "Course creation, enrollment, and content-management workflows on a TypeScript/React + Django REST stack; optimized SQL with pagination and filtering at 95% uptime.",
+      "Course creation, enrollment, and content-management workflows on a TypeScript/React + Django REST stack with paginated, filtered SQL queries.",
       "Authored API documentation, implemented CI/CD with automated testing, conducted code reviews.",
     ],
   },

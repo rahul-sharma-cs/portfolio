@@ -46,7 +46,7 @@ export default function PlottedName({ play }: { play: boolean }) {
                       fill="rgb(var(--c-ink))"
                       initial={play ? { opacity: 0 } : false}
                       animate={{ opacity: 1 }}
-                      transition={{ duration: 0.35, delay: 0.95 + i * 0.02 }}
+                      transition={{ duration: 0.35, delay: 0.35 + i * 0.06 + 0.5 + 0.1 }}
                     />
                   </g>
                 );
