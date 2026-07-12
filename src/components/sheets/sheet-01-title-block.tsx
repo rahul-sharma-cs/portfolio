@@ -9,12 +9,18 @@ import PlottedName from "@/components/drafting/plotted-name";
 import DimensionLine from "@/components/drafting/dimension-line";
 import { useMeasuredWidth } from "@/lib/hooks";
 
+// Latched once at module evaluation (pre-hydration, after the <head> gate script):
+// stable for the component's lifetime, so later re-renders can't kill the animation.
+const INTRO_PENDING =
+  typeof document !== "undefined" &&
+  document.documentElement.classList.contains("intro-pending");
+
 /** True exactly when this session hasn't seen the intro (html.intro-pending was set pre-paint). */
 function useIntroPlay(): boolean {
   const reduce = useReducedMotion();
   const pending = useSyncExternalStore(
     () => () => {},
-    () => document.documentElement.classList.contains("intro-pending"),
+    () => INTRO_PENDING,
     () => false
   );
   return pending && !reduce;
@@ -33,15 +39,7 @@ export default function Sheet01TitleBlock() {
       sessionStorage.setItem("bp-intro-seen", "1");
     } catch {}
     document.documentElement.classList.remove("intro-pending");
-
-    if (!document.documentElement.classList.contains("intro-pending")) {
-      // gate already released on a previous mount — nothing to skip
-    }
-    const skip = () => {
-      document.querySelectorAll<HTMLElement>("[data-intro]").forEach((el) => {
-        el.style.opacity = "";
-      });
-    };
+    const skip = () => document.documentElement.classList.add("intro-skip");
     window.addEventListener("pointerdown", skip, { once: true });
     window.addEventListener("keydown", skip, { once: true });
     window.addEventListener("wheel", skip, { once: true, passive: true });
@@ -63,7 +61,7 @@ export default function Sheet01TitleBlock() {
 
   return (
     <Sheet link={links[0]} eyebrow="Title Block" threshold={0.5} className="min-h-[calc(100svh-3rem)]">
-      <div className="flex min-h-[70svh] flex-col justify-between gap-10">
+      <div key={play ? "intro" : "static"} className="flex min-h-[70svh] flex-col justify-between gap-10">
         <div ref={nameRef} data-intro className="w-full max-w-4xl">
           <PlottedName play={play} />
           <motion.div {...enter(1.15)} data-intro className="mt-4">

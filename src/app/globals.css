@@ -78,9 +78,22 @@
   }
 }
 
-/* Hero elements hidden until the plotter entrance starts (class set pre-paint in layout head) */
+/* Hero elements hidden until the plotter entrance starts (class set pre-paint in layout head).
+   The keyframe is a failsafe: if React never hydrates, content force-reveals at ~2.8s. */
+@keyframes bp-failsafe {
+  to {
+    opacity: 1;
+  }
+}
 .intro-pending [data-intro] {
   opacity: 0;
+  animation: bp-failsafe 0.3s ease 2.8s forwards;
+}
+/* Honest skip: any input during the entrance force-completes the reveal.
+   !important beats motion's inline opacity mid-flight; stroke paths freeze harmlessly. */
+.intro-skip [data-intro],
+.intro-skip [data-intro] svg path {
+  opacity: 1 !important;
 }
 
 /* Cyanotype exposure wipe — the JS animates ::view-transition-new(root) clip-path */
