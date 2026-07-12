@@ -8,20 +8,17 @@
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
-    "generate:letterforms": "node scripts/generate-letterforms.mjs"
+    "generate:letterforms": "node scripts/generate-letterforms.mjs",
+    "check:contrast": "node scripts/check-contrast.mjs"
   },
   "dependencies": {
     "@fontsource-variable/archivo": "^5.2.8",
     "@fontsource-variable/martian-mono": "^5.2.7",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
     "motion": "^12.42.2",
     "next": "^16.2.10",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-icons": "^5.5.0",
-    "react-intersection-observer": "^9.16.0",
-    "tailwind-merge": "^3.3.1"
+    "react-intersection-observer": "^9.16.0"
   },
   "devDependencies": {
     "@types/node": "^22",
