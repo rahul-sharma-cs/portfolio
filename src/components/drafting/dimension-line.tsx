@@ -9,7 +9,7 @@ export default function DimensionLine({ width, className = "" }: { width: number
     <div aria-hidden className={`flex items-center gap-2 text-redline ${className}`}>
       <span className="h-2.5 w-px shrink-0 bg-redline" />
       <RuleX className="flex-1 !bg-redline" />
-      <span className="shrink-0 whitespace-nowrap font-mono text-[0.6rem] tracking-[0.1em] tabular-nums">
+      <span className="shrink-0 whitespace-nowrap font-mono text-anno-sm tracking-[0.1em] tabular-nums">
         ← <Counter value={width} /> PX →
       </span>
       <RuleX className="flex-1 origin-right !bg-redline" />

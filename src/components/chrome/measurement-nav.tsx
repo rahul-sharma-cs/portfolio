@@ -33,7 +33,7 @@ export default function MeasurementNav() {
               <a
                 href={link.hash}
                 onClick={go(link)}
-                className={`relative flex items-center gap-2 py-3.5 font-mono text-[0.62rem] uppercase tracking-[0.14em] transition-colors ${
+                className={`relative flex items-center gap-2 py-3.5 font-mono text-anno-sm uppercase tracking-[0.14em] transition-colors ${
                   activeSection === link.name ? "text-ink" : "text-pencil hover:text-ink"
                 }`}
               >
@@ -55,7 +55,7 @@ export default function MeasurementNav() {
         {/* Mobile: current sheet + index toggle */}
         <button
           type="button"
-          className="flex min-h-11 items-center gap-2 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-ink md:hidden"
+          className="flex min-h-11 items-center gap-2 font-mono text-anno-sm uppercase tracking-[0.14em] text-ink md:hidden"
           aria-expanded={open}
           aria-controls="sheet-index"
           onClick={() => setOpen((v) => !v)}
@@ -69,14 +69,14 @@ export default function MeasurementNav() {
           <a
             href={`mailto:${siteConfig.email}`}
             aria-label="Email"
-            className="flex min-h-11 items-center border border-redline px-3 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-redline transition-colors hover:bg-redline hover:text-sheet"
+            className="flex min-h-11 items-center border border-redline px-3 font-mono text-anno-sm uppercase tracking-[0.14em] text-redline transition-colors hover:bg-redline hover:text-sheet"
           >
             <span aria-hidden className="sm:hidden">@</span>
             <span aria-hidden className="hidden sm:inline">Email</span>
           </a>
           <a
             href={siteConfig.resume}
-            className="flex min-h-11 items-center border border-redline px-3 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-redline transition-colors hover:bg-redline hover:text-sheet"
+            className="flex min-h-11 items-center border border-redline px-3 font-mono text-anno-sm uppercase tracking-[0.14em] text-redline transition-colors hover:bg-redline hover:text-sheet"
           >
             <span className="hidden sm:inline">Full set (</span>PDF<span className="hidden sm:inline">)</span>
           </a>
@@ -92,7 +92,7 @@ export default function MeasurementNav() {
               <a
                 href={link.hash}
                 onClick={go(link)}
-                className={`flex min-h-11 items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] ${
+                className={`flex min-h-11 items-center gap-3 font-mono text-anno uppercase tracking-[0.14em] ${
                   activeSection === link.name ? "text-redline" : "text-pencil"
                 }`}
               >
@@ -104,7 +104,7 @@ export default function MeasurementNav() {
           <li>
             <a
               href={`mailto:${siteConfig.email}`}
-              className="flex min-h-11 items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-redline"
+              className="flex min-h-11 items-center gap-3 font-mono text-anno uppercase tracking-[0.14em] text-redline"
             >
               <span aria-hidden className="h-2 w-px bg-redline" />
               EMAIL
@@ -113,7 +113,7 @@ export default function MeasurementNav() {
           <li>
             <a
               href={siteConfig.resume}
-              className="flex min-h-11 items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-redline"
+              className="flex min-h-11 items-center gap-3 font-mono text-anno uppercase tracking-[0.14em] text-redline"
             >
               <span aria-hidden className="h-2 w-px bg-redline" />
               FULL SET (PDF)

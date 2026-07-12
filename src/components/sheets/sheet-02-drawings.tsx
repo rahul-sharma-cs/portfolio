@@ -26,7 +26,7 @@ function PlateImage({ image }: { image: NonNullable<Project["image"]> }) {
           className="duotone w-full"
           sizes="(max-width: 768px) 100vw, 40vw"
         />
-        <figcaption className="mt-2 font-mono text-[0.55rem] uppercase tracking-[0.12em] text-pencil">
+        <figcaption className="mt-2 font-mono text-anno-sm uppercase tracking-[0.12em] text-pencil">
           Printed reproduction — not to scale
         </figcaption>
       </div>
@@ -47,14 +47,14 @@ function Plate({ project, index }: { project: Project; index: number }) {
       className="relative"
     >
       <header className="flex items-baseline justify-between gap-4">
-        <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-redline">
+        <p className="font-mono text-anno-sm uppercase tracking-[0.16em] text-redline">
           Fig. {String(index + 1).padStart(2, "0")}
         </p>
         {project.date && (
-          <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-pencil">{project.date}</p>
+          <p className="font-mono text-anno-sm uppercase tracking-[0.16em] text-pencil">{project.date}</p>
         )}
       </header>
-      <h3 className="wdth-expanded mt-1 font-sans text-[clamp(1.9rem,4.5vw,3.4rem)] font-extrabold uppercase leading-none tracking-tight">
+      <h3 className="wdth-expanded mt-1 font-sans text-head font-extrabold uppercase leading-none tracking-tight">
         {project.title}
       </h3>
       <RuleX className="mb-8 mt-4" />
@@ -66,7 +66,7 @@ function Plate({ project, index }: { project: Project; index: number }) {
 
         <div className={`space-y-6 md:col-span-6 order-1 ${flipped ? "md:order-1" : "md:order-2"}`}>
           {project.image && <PlateImage image={project.image} />}
-          <p data-prose className="max-w-[58ch] text-[0.95rem] leading-relaxed text-ink">
+          <p data-prose className="max-w-[58ch] text-body leading-relaxed text-ink">
             {project.spec}
           </p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2">
@@ -76,7 +76,7 @@ function Plate({ project, index }: { project: Project; index: number }) {
           </ul>
           <div className="pt-1">
             {project.links?.github || project.links?.live ? (
-              <ul className="space-y-1.5 font-mono text-[0.7rem] uppercase tracking-[0.12em]">
+              <ul className="space-y-1.5 font-mono text-anno uppercase tracking-[0.12em]">
                 {project.links.github && (
                   <li>
                     <a href={project.links.github} target="_blank" rel="noreferrer" className="text-redline underline underline-offset-4 hover:no-underline">

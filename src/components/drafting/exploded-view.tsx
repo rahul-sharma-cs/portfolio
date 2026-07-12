@@ -45,10 +45,10 @@ function Plane({
       style={{ transform }}
       className="absolute inset-x-[16%] top-[22%] h-[44%] border border-ink bg-sheet/90"
     >
-      <span className="absolute left-2 top-1.5 font-mono text-[0.6rem] tracking-[0.12em] text-redline">
+      <span className="absolute left-2 top-1.5 font-mono text-anno-sm tracking-[0.12em] text-redline">
         {String(index).padStart(2, "0")}
       </span>
-      <span className="absolute bottom-1.5 right-2 hidden font-mono text-[0.5rem] uppercase tracking-[0.1em] text-pencil sm:block">
+      <span className="absolute bottom-1.5 right-2 hidden font-mono text-anno-sm uppercase tracking-[0.1em] text-pencil sm:block">
         {label}
       </span>
     </motion.div>
@@ -120,7 +120,7 @@ export default function ExplodedView({
         ))}
       </ol>
       {!fine && !reduce && (
-        <p className="mt-1 font-mono text-[0.55rem] uppercase tracking-[0.12em] text-pencil">
+        <p className="mt-1 font-mono text-anno-sm uppercase tracking-[0.12em] text-pencil">
           {popped ? "Tap to assemble" : "Tap to explode"}
         </p>
       )}

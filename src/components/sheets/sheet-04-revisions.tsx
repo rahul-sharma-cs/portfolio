@@ -25,18 +25,18 @@ export default function Sheet04Revisions() {
             >
               <span aria-hidden className="absolute -left-[2.35rem] top-2 hidden h-px w-4 bg-redline lg:block" />
               <div className="flex flex-wrap items-baseline gap-x-4 gap-y-1">
-                <span className="font-mono text-[0.7rem] font-bold uppercase tracking-[0.14em] text-redline">
+                <span className="font-mono text-anno font-bold uppercase tracking-[0.14em] text-redline">
                   REV {rev.rev}
                 </span>
-                <span className="font-mono text-[0.62rem] uppercase tracking-[0.14em] text-pencil">{rev.date}</span>
-                <span className="ml-auto hidden font-mono text-[0.6rem] uppercase tracking-[0.14em] text-pencil sm:inline">
+                <span className="font-mono text-anno-sm uppercase tracking-[0.14em] text-pencil">{rev.date}</span>
+                <span className="ml-auto hidden font-mono text-anno-sm uppercase tracking-[0.14em] text-pencil sm:inline">
                   APPROVED: {rev.approved}
                 </span>
               </div>
-              <h3 className="mt-1.5 font-sans text-lg font-bold uppercase tracking-tight text-ink">
+              <h3 className="mt-1.5 font-sans text-head-sm font-bold uppercase tracking-tight text-ink">
                 {rev.role} <span className="font-normal text-pencil">— {rev.org}</span>
               </h3>
-              <ul data-prose className="mt-2 max-w-[62ch] space-y-1.5 text-[0.85rem] leading-relaxed">
+              <ul data-prose className="mt-2 max-w-[62ch] space-y-1.5 text-body-sm leading-relaxed">
                 {rev.bullets.map((b) => (
                   <li key={b} className="flex gap-2.5">
                     <span aria-hidden className="mt-[0.55em] h-px w-3 shrink-0 bg-rule" />
@@ -50,19 +50,19 @@ export default function Sheet04Revisions() {
 
         <aside className="lg:col-span-4">
           <div className="relative border border-ink p-6">
-            <p className="font-mono text-[0.6rem] uppercase tracking-[0.16em] text-pencil">Detail — Education</p>
+            <p className="font-mono text-anno-sm uppercase tracking-[0.16em] text-pencil">Detail — Education</p>
             <RuleX className="mb-5 mt-2" />
-            <p className="font-sans text-lg font-bold uppercase tracking-tight text-ink">{education.degree}</p>
-            <p className="mt-1 text-[0.85rem] text-pencil">{education.school}</p>
-            <p className="mt-5 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-pencil">GPA</p>
+            <p className="font-sans text-head-sm font-bold uppercase tracking-tight text-ink">{education.degree}</p>
+            <p className="mt-1 text-body-sm text-pencil">{education.school}</p>
+            <p className="mt-5 font-mono text-anno-sm uppercase tracking-[0.14em] text-pencil">GPA</p>
             <p className="font-sans text-4xl font-extrabold text-ink">
               <Counter value={education.gpa} decimals={2} />
             </p>
             <div className="mt-5">
               <Stamp>{education.honors}</Stamp>
             </div>
-            <p className="mt-5 text-[0.8rem] text-pencil">{education.scholarship}</p>
-            <p className="mt-4 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-redline">
+            <p className="mt-5 text-body-sm text-pencil">{education.scholarship}</p>
+            <p className="mt-4 font-mono text-anno-sm uppercase tracking-[0.14em] text-redline">
               EXPECTED COMPLETION: {education.expected}
             </p>
           </div>

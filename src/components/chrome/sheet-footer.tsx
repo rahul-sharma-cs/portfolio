@@ -16,7 +16,7 @@ export default function SheetFooter() {
       <span aria-hidden className={`${corner} bottom-2 right-2 border-b border-r`} />
       <p
         aria-hidden
-        className="pointer-events-none fixed bottom-3 right-8 z-30 hidden font-mono text-[0.55rem] uppercase tracking-[0.16em] text-pencil sm:block"
+        className="pointer-events-none fixed bottom-3 right-8 z-30 hidden font-mono text-anno-sm uppercase tracking-[0.16em] text-pencil sm:block"
       >
         Rahul Sharma — Drawing Set — SHT {num}/06
       </p>

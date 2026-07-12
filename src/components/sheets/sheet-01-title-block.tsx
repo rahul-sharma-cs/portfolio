@@ -93,13 +93,13 @@ function HeroContent({ play }: { play: boolean }) {
         <motion.div {...enter(0.9)} data-intro className="flex flex-wrap gap-3">
           <a
             href={links[1].hash}
-            className="flex min-h-11 items-center border border-ink px-4 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-ink transition-colors hover:bg-ink hover:text-sheet"
+            className="flex min-h-11 items-center border border-ink px-4 font-mono text-anno-sm uppercase tracking-[0.14em] text-ink transition-colors hover:bg-ink hover:text-sheet"
           >
             View drawings ↓
           </a>
           <a
             href={siteConfig.resume}
-            className="flex min-h-11 items-center border border-redline px-4 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-redline transition-colors hover:bg-redline hover:text-sheet"
+            className="flex min-h-11 items-center border border-redline px-4 font-mono text-anno-sm uppercase tracking-[0.14em] text-redline transition-colors hover:bg-redline hover:text-sheet"
           >
             Download full set (PDF)
           </a>

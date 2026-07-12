@@ -17,7 +17,7 @@ export default function Stamp({
   className?: string;
 }) {
   const reduce = useReducedMotion();
-  const base = `inline-block border-2 border-redline px-3 py-1.5 font-mono text-[0.65rem] font-bold uppercase tracking-[0.14em] text-redline ${className}`;
+  const base = `inline-block border-2 border-redline px-3 py-1.5 font-mono text-anno-sm font-bold uppercase tracking-[0.14em] text-redline ${className}`;
 
   if (variant === "quiet" || reduce) {
     return (

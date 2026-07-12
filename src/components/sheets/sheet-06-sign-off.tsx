@@ -17,7 +17,7 @@ export default function Sheet06SignOff() {
     <Sheet link={links[5]} eyebrow="Sign-Off — Release" threshold={0.6}>
       <div className="flex flex-col items-start gap-10">
         <div className="flex flex-wrap items-center gap-6">
-          <h3 className="wdth-expanded max-w-[24ch] font-sans text-[clamp(1.5rem,3.5vw,2.6rem)] font-extrabold uppercase leading-tight tracking-tight">
+          <h3 className="wdth-expanded max-w-[24ch] font-sans text-head-lg font-extrabold uppercase leading-tight tracking-tight">
             This design is released for interview.
           </h3>
           <Stamp>Approved</Stamp>
@@ -25,7 +25,7 @@ export default function Sheet06SignOff() {
 
         <a
           href={`mailto:${siteConfig.email}`}
-          className="stretch-wdth break-all font-sans text-[clamp(2rem,9vw,4.2rem)] font-bold lowercase leading-none text-ink underline decoration-redline decoration-2 underline-offset-8 hover:text-redline"
+          className="stretch-wdth break-all font-sans text-mail font-bold lowercase leading-none text-ink underline decoration-redline decoration-2 underline-offset-8 hover:text-redline"
         >
           {siteConfig.email}
         </a>
@@ -40,7 +40,7 @@ export default function Sheet06SignOff() {
                   href={s.href}
                   target="_blank"
                   rel="noreferrer"
-                  className="group flex min-h-11 items-center gap-3 font-mono text-[0.7rem] uppercase tracking-[0.14em] text-pencil hover:text-redline"
+                  className="group flex min-h-11 items-center gap-3 font-mono text-anno uppercase tracking-[0.14em] text-pencil hover:text-redline"
                 >
                   <span aria-hidden className="h-2 w-px bg-rule group-hover:bg-redline" />
                   REF: {s.label} — {s.handle} <span aria-hidden>↗</span>
@@ -51,14 +51,14 @@ export default function Sheet06SignOff() {
           <div className="flex flex-col items-start justify-end gap-4 sm:items-end">
             <a
               href={siteConfig.resume}
-              className="flex min-h-11 items-center border border-redline px-4 font-mono text-[0.65rem] uppercase tracking-[0.14em] text-redline transition-colors hover:bg-redline hover:text-sheet"
+              className="flex min-h-11 items-center border border-redline px-4 font-mono text-anno-sm uppercase tracking-[0.14em] text-redline transition-colors hover:bg-redline hover:text-sheet"
             >
               Download full drawing set (PDF)
             </a>
-            <p className="font-mono text-[0.55rem] uppercase tracking-[0.14em] text-pencil">
+            <p className="font-mono text-anno-sm uppercase tracking-[0.14em] text-pencil">
               Set in Archivo &amp; Martian Mono. Drafted with Next.js 16 + Motion.
             </p>
-            <p className="font-mono text-[0.55rem] uppercase tracking-[0.14em] text-pencil">
+            <p className="font-mono text-anno-sm uppercase tracking-[0.14em] text-pencil">
               End of set — 06/06 · REV {process.env.NEXT_PUBLIC_BUILD_SHA ?? "dev"}
             </p>
           </div>

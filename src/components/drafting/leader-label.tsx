@@ -17,7 +17,7 @@ export default function LeaderLabel({
   const glyphColor = tone === "quiet" ? "bg-rule" : "bg-redline";
   const indexColor = tone === "quiet" ? "text-pencil" : "text-redline";
   return (
-    <li className={`flex items-baseline gap-2.5 font-mono text-[0.65rem] uppercase tracking-[0.12em] text-pencil ${className}`}>
+    <li className={`flex items-baseline gap-2.5 font-mono text-anno-sm uppercase tracking-[0.12em] text-pencil ${className}`}>
       <span aria-hidden className="flex shrink-0 translate-y-[-2px] items-center gap-1">
         <span className={`inline-block h-1.5 w-1.5 rounded-full ${glyphColor}`} />
         <span className={`inline-block h-px w-6 ${glyphColor}`} />

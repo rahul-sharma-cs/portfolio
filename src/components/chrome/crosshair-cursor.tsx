@@ -72,7 +72,7 @@ function Crosshair() {
       />
       <motion.p
         style={{ x: sx, y: sy, opacity: mode === "free" ? 1 : 0 }}
-        className="absolute font-mono text-[0.55rem] tracking-[0.08em] text-pencil transition-opacity duration-200"
+        className="absolute font-mono text-anno-sm tracking-[0.08em] text-pencil transition-opacity duration-200"
       >
         {/* offset lives on inner padding, not a CSS transform — motion's style={{x,y}}
             would otherwise clobber a transform set via className on this same element */}

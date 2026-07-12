@@ -44,7 +44,7 @@ export default function Sheet({
         {link.num}
       </motion.span>
       <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <h2 className="mb-2 font-mono text-[0.65rem] font-medium uppercase tracking-[0.16em] text-pencil">
+        <h2 className="mb-2 font-mono text-anno-sm font-medium uppercase tracking-[0.16em] text-pencil">
           SHT {link.num}/06 — {eyebrow}
         </h2>
         <RuleX className="mb-10" />
