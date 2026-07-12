@@ -50,14 +50,16 @@ function Plate({ project, index }: { project: Project; index: number }) {
         <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-redline">
           Fig. {String(index + 1).padStart(2, "0")}
         </p>
-        <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-pencil">{project.date}</p>
+        {project.date && (
+          <p className="font-mono text-[0.65rem] uppercase tracking-[0.16em] text-pencil">{project.date}</p>
+        )}
       </header>
       <h3 className="wdth-expanded mt-1 font-sans text-[clamp(1.9rem,4.5vw,3.4rem)] font-extrabold uppercase leading-none tracking-tight">
         {project.title}
       </h3>
       <RuleX className="mb-8 mt-4" />
 
-      <div className={`grid items-start gap-8 md:grid-cols-12 ${flipped ? "" : ""}`}>
+      <div className="grid items-start gap-8 md:grid-cols-12">
         <Tilt className={`md:col-span-6 ${flipped ? "md:order-2" : ""}`}>
           <ExplodedView layers={project.architecture} title={project.title} />
         </Tilt>

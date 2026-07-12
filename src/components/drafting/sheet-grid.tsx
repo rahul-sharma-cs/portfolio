@@ -6,7 +6,7 @@ import { motion, useScroll, useTransform, useReducedMotion } from "motion/react"
 export default function SheetGrid() {
   const { scrollY } = useScroll();
   const reduce = useReducedMotion();
-  const y = useTransform(scrollY, (v) => (reduce ? 0 : v * -0.06));
+  const y = useTransform(scrollY, (v) => (reduce ? 0 : -((v * 0.06) % 96)));
   return (
     <motion.div
       aria-hidden

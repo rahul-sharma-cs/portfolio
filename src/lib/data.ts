@@ -46,7 +46,8 @@ export const siteConfig = {
 export type Project = {
   id: string;
   title: string;
-  date: string;
+  /** Display date, e.g. "SEP 2024" — omit if unverified. */
+  date?: string;
   /** ~60 words, verified facts only. */
   spec: string;
   tags: readonly string[];
@@ -89,7 +90,6 @@ export const projects: readonly Project[] = [
   {
     id: "tripplanner",
     title: "TripPlanner",
-    date: "2024",
     spec: "A day-planning web app that syncs with your calendar and fills the gaps: given the events you already have, it suggests nearby restaurants between them using the Google Maps and Calendar APIs. Built with React, TypeScript, and Next.js on Firebase, with Auth0 authentication.",
     tags: ["React", "TypeScript", "Next.js", "Firebase", "Auth0", "Google Maps API"],
     architecture: [
@@ -103,7 +103,6 @@ export const projects: readonly Project[] = [
   {
     id: "synchrocode",
     title: "SynchroCode",
-    date: "2023",
     spec: "A web-based code editor built for seamless collaboration: edits propagate to every participant in real time over WebSockets. A Node.js backend fans out changes, Quill.js drives the editing surface, and Firebase handles persistence.",
     tags: ["Node.js", "WebSockets", "Quill.js", "Firebase"],
     architecture: [

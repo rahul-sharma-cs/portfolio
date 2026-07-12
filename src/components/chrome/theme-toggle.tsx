@@ -9,7 +9,7 @@ export default function ThemeToggle() {
       type="button"
       onClick={(e) => toggleTheme(e)}
       aria-label={theme === "dark" ? "Switch to vellum (light) theme" : "Switch to cyanotype (dark) theme"}
-      className="flex h-9 w-9 items-center justify-center border border-rule text-ink transition-colors hover:border-ink"
+      className="flex h-11 w-11 items-center justify-center border border-rule text-ink transition-colors hover:border-ink"
     >
       {theme === "dark" ? (
         /* sun — drafting-compass style */
