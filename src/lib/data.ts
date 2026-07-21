@@ -29,12 +29,12 @@ export const siteConfig = {
   /** Title-block STATUS field + ticker copy. */
   status: "SEEKING FULL-TIME",
   gradDate: "DEC 2026",
-  current: "FOUNDING ENGINEER — THECOLLEGETECH",
+  current: "IT TECHNICIAN — GMU ENGINEERING",
   location: "Fairfax, VA",
   email: "rs.rahul1@outlook.com",
   resume: "/Rahul_Resume.pdf",
   description:
-    "Software engineer and CS senior at George Mason University (Dec 2026). Founding engineer at TheCollegeTech. Portfolio drafted as an engineering drawing set.",
+    "Software engineer and CS senior at George Mason University (Dec 2026). Previously founding engineer at TheCollegeTech. Portfolio drafted as an engineering drawing set.",
   socials: {
     github: "https://github.com/rahul-sharma-cs",
     linkedin: "https://linkedin.com/in/rahulsharma-cs",
@@ -76,7 +76,7 @@ export const projects: readonly Project[] = [
   {
     id: "xpense",
     title: "XPen$e",
-    date: "SEP 2024",
+    date: "DEC 2024",
     spec: "A wallet app that answers one question at the register: which card? Merchant data is read over NFC/EMV, located via the Google Maps API, and fed to a Perplexity AI model that recommends the card maximizing rewards for that purchase. Auth0 handles authentication; Supabase stores card metadata; the frontend is Next.js.",
     tags: ["Next.js", "Supabase", "Auth0", "NFC", "Google Maps API", "Perplexity AI"],
     architecture: [
@@ -117,23 +117,24 @@ export const projects: readonly Project[] = [
 
 /** SHT 03 — Bill of Materials. */
 export const skills = [
-  { item: "001", category: "Languages", spec: "Python · Java · C · C++ · Kotlin · JavaScript · TypeScript · SQL · HTML/CSS · Bash/PowerShell" },
-  { item: "002", category: "Frameworks", spec: "React · Next.js · Node.js · Django REST · Tailwind" },
-  { item: "003", category: "Data", spec: "PostgreSQL · MySQL · MongoDB · Supabase · Firebase · Azure Blob Storage" },
-  { item: "004", category: "Tooling", spec: "Git · Linux · CI/CD · JUnit · NumPy · Android Studio" },
+  { item: "001", category: "Languages", spec: "Java · Python · C/C++ · Kotlin · JavaScript · TypeScript · PHP" },
+  { item: "002", category: "Web & App", spec: "React · Next.js · Angular.js · Django · Flask · FastAPI · Bootstrap · .NET · RESTful APIs" },
+  { item: "003", category: "Libraries", spec: "Node.js · TensorFlow · NumPy · JUnit" },
+  { item: "004", category: "Databases", spec: "SQL (MySQL, PostgreSQL) · MongoDB · Redis · Firebase · Supabase · Vector Databases · Convex" },
+  { item: "005", category: "Cloud & DevOps", spec: "AWS (EC2, S3) · Microsoft Azure · Git · Linux" },
 ] as const;
 
 /** SHT 04 — revision history, newest first. `approved` = the org mark. */
 export const revisions = [
   {
     rev: "C",
-    date: "MAY 2025 — PRESENT",
+    date: "MAY 2025",
     role: "Founding Engineer",
     org: "TheCollegeTech",
     approved: "TCT",
     bullets: [
       "Architected a Learning Management System end-to-end: Supabase auth, account management, and role-based access control.",
-      "Course creation, enrollment, and content-management workflows on a TypeScript/React + Django REST stack with paginated, filtered SQL queries.",
+      "Course creation, enrollment, and content-management workflows on a TypeScript/React + Django REST stack with paginated, filtered SQL queries, maintained at 95% uptime.",
       "Authored API documentation, implemented CI/CD with automated testing, conducted code reviews.",
     ],
   },
@@ -165,6 +166,7 @@ export const education = {
   gpa: 3.73,
   honors: "Dean's List F23 · S26",
   scholarship: "Mason Distinction Scholarship",
+  coursework: "Data Structures & Algorithms · Database Systems · ML · SWE · Operating Systems",
   expected: "DEC 2026",
 } as const;
 

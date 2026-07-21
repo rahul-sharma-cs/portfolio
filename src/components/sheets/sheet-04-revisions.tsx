@@ -62,6 +62,8 @@ export default function Sheet04Revisions() {
               <Stamp>{education.honors}</Stamp>
             </div>
             <p className="mt-5 text-body-sm text-pencil">{education.scholarship}</p>
+            <p className="mt-4 font-mono text-anno-sm uppercase tracking-[0.14em] text-pencil">Coursework</p>
+            <p className="mt-1 text-body-sm leading-relaxed text-pencil">{education.coursework}</p>
             <p className="mt-4 font-mono text-anno-sm uppercase tracking-[0.14em] text-redline">
               EXPECTED COMPLETION: {education.expected}
             </p>
