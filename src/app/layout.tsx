@@ -11,13 +11,18 @@ import CrosshairCursor from "@/components/chrome/crosshair-cursor";
 import { siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.rahulsharma-cs.site"),
   title: `${siteConfig.name} — ${siteConfig.role}`,
   description: siteConfig.description,
+  alternates: { canonical: "/" },
   openGraph: {
     title: `${siteConfig.name} — ${siteConfig.role}`,
     description: siteConfig.description,
+    url: "/",
     type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Rahul Sharma — Software Engineer. Portfolio drafted as an engineering drawing set." }],
   },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {

@@ -14,12 +14,15 @@ import { RuleX } from "@/components/drafting/rule";
 export default function Sheet({
   link,
   eyebrow,
+  eyebrowAs: Eyebrow = "h2",
   threshold = 0.5,
   className = "",
   children,
 }: {
   link: Link;
   eyebrow: string;
+  /** SHT 01's eyebrow precedes the h1 in DOM order — it passes "p" so the h1 stays the document's first heading. */
+  eyebrowAs?: "h2" | "p";
   threshold?: number;
   className?: string;
   children: ReactNode;
@@ -44,9 +47,9 @@ export default function Sheet({
         {link.num}
       </motion.span>
       <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-8">
-        <h2 className="mb-2 font-mono text-anno-sm font-medium uppercase tracking-[0.16em] text-pencil">
+        <Eyebrow className="mb-2 font-mono text-anno-sm font-medium uppercase tracking-[0.16em] text-pencil">
           SHT {link.num}/06 — {eyebrow}
-        </h2>
+        </Eyebrow>
         <RuleX className="mb-10" />
         {children}
       </div>

@@ -56,7 +56,7 @@ export default function Sheet01TitleBlock() {
   }, []);
 
   return (
-    <Sheet link={links[0]} eyebrow="Title Block" threshold={0.5} className="min-h-[calc(100svh-3rem)]">
+    <Sheet link={links[0]} eyebrow="Title Block" eyebrowAs="p" threshold={0.5} className="min-h-[calc(100svh-3rem)]">
       <HeroContent key={play ? "intro" : "static"} play={play} />
     </Sheet>
   );

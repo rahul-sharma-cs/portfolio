@@ -1,11 +1,14 @@
 /* eslint-disable-next-line @typescript-eslint/no-require-imports */
 const { execSync } = require("node:child_process");
 
-let sha = "dev";
-try {
-  sha = execSync("git rev-parse --short HEAD").toString().trim();
-} catch {
-  /* git unavailable (e.g. CI tarball) — keep "dev" */
+// Vercel/CI build containers have no .git — the platform exposes the SHA via env instead.
+let sha = (process.env.VERCEL_GIT_COMMIT_SHA ?? process.env.GITHUB_SHA ?? "").slice(0, 7);
+if (!sha) {
+  try {
+    sha = execSync("git rev-parse --short HEAD").toString().trim();
+  } catch {
+    sha = "dev"; /* no env SHA and no git (e.g. source tarball) */
+  }
 }
 
 /** @type {import('next').NextConfig} */
