@@ -126,7 +126,7 @@ export const skills = [
 /** SHT 04 — revision history, newest first. `approved` = the org mark. */
 export const revisions = [
   {
-    rev: "D",
+    rev: "C",
     date: "MAY 2025 — PRESENT",
     role: "Founding Engineer",
     org: "TheCollegeTech",
@@ -138,7 +138,7 @@ export const revisions = [
     ],
   },
   {
-    rev: "C",
+    rev: "B",
     date: "JUN 2023 — PRESENT",
     role: "IT Technician, College of Engineering",
     org: "George Mason University",
@@ -147,17 +147,6 @@ export const revisions = [
       "Automation scripts (Python, Bash, PowerShell) for Windows/macOS/Linux, automating deployment across 450+ lab computers.",
       "Custom Linux server configurations and documentation that cut recurring support tickets by 30%; 99% uptime across 15–20 labs.",
       "Internal ticketing tools improving average resolution time by 40% for 200+ faculty and staff.",
-    ],
-  },
-  {
-    rev: "B",
-    date: "MAR — JUN 2023",
-    role: "IT Support Analyst",
-    org: "George Mason University ITS",
-    approved: "GMU ITS",
-    bullets: [
-      "High first-call resolution across hardware, software, and network issues; remote diagnostics.",
-      "Cross-team pattern analysis to eliminate recurring incidents.",
     ],
   },
   {
