@@ -163,7 +163,7 @@ export const revisions = [
 export const education = {
   school: "George Mason University",
   degree: "B.S. Computer Science",
-  gpa: 3.73,
+  gpa: 3.75,
   honors: "Dean's List F23 · S26",
   scholarship: "Mason Distinction Scholarship",
   coursework: "Data Structures & Algorithms · Database Systems · ML · SWE · Operating Systems",

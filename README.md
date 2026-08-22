@@ -4,7 +4,7 @@ Personal portfolio drafted as an engineering drawing set: vellum paper and graph
 grid by day, cyanotype blueprint by night. Six sheets — title block, drawings,
 bill of materials, revision history, detail view, sign-off.
 
-**Live site:** [rahulsharma-cs.site](https://rahulsharma-cs.site)
+**Live site:** [www.rahulsharma-cs.site](https://www.rahulsharma-cs.site)
 
 ## Built with
 
@@ -22,7 +22,8 @@ bill of materials, revision history, detail view, sign-off.
 
 Other scripts: `npm run build`, `npm run start`, `npm run lint`, `npm run typecheck`,
 `npm run generate:letterforms` (only when the name/typeface changes),
-`node scripts/check-contrast.mjs` (WCAG token audit).
+`node scripts/check-contrast.mjs` (WCAG token audit),
+`node scripts/generate-og.mjs` (regenerate the social card; needs local Chrome).
 
 ## Editing content
 
