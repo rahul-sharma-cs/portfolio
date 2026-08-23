@@ -1,7 +1,6 @@
 import type { StaticImageData } from "next/image";
+import driveImg from "../../public/drive.png";
 import xpenseImg from "../../public/xpense.png";
-import tripplannerImg from "../../public/tripplanner.png";
-import synchroImg from "../../public/synchro.png";
 
 /**
  * ─────────────────────────────────────────────────────────────────
@@ -61,6 +60,21 @@ export type Project = {
 
 export const projects: readonly Project[] = [
   {
+    id: "drive",
+    title: "Drive",
+    date: "AUG 2026",
+    spec: "A self-hosted file store built around one hard problem: uploading a very large file over a connection that will not stay up. One Go binary serves the API and the React app; file bytes go browser-to-storage over presigned S3 multipart URLs, every confirmed part is durable state in Postgres, and an interrupted upload — dropped connection, closed tab, killed server — resumes from the last confirmed part.",
+    tags: ["Go", "React", "TypeScript", "PostgreSQL", "S3 Multipart", "Docker"],
+    architecture: [
+      { layer: "UI", label: "React file manager" },
+      { layer: "Transfer", label: "Presigned multipart PUTs" },
+      { layer: "Server", label: "Go API + part ledger" },
+      { layer: "Store", label: "S3 object storage · Postgres" },
+    ],
+    image: { src: driveImg, alt: "Drive — file browser with a multipart upload in flight, per-part progress segments" },
+    links: { github: "https://github.com/rahul-sharma-cs/drive", live: "https://drive.rahulsharma-cs.site" },
+  },
+  {
     id: "vidya-lms",
     title: "Vidya LMS",
     date: "JUL 2025",
@@ -86,32 +100,6 @@ export const projects: readonly Project[] = [
       { layer: "Account", label: "Auth0 + Supabase" },
     ],
     image: { src: xpenseImg, alt: "XPen$e wallet app — personal credit cards screen" },
-  },
-  {
-    id: "tripplanner",
-    title: "TripPlanner",
-    spec: "A day-planning web app that syncs with your calendar and fills the gaps: given the events you already have, it suggests nearby restaurants between them using the Google Maps and Calendar APIs. Built with React, TypeScript, and Next.js on Firebase, with Auth0 authentication.",
-    tags: ["React", "TypeScript", "Next.js", "Firebase", "Auth0", "Google Maps API"],
-    architecture: [
-      { layer: "UI", label: "React / Next.js" },
-      { layer: "Sync", label: "Google Calendar API" },
-      { layer: "Places", label: "Google Maps API" },
-      { layer: "Data", label: "Firebase" },
-    ],
-    image: { src: tripplannerImg, alt: "TripPlanner — date search with calendar view" },
-  },
-  {
-    id: "synchrocode",
-    title: "SynchroCode",
-    spec: "A web-based code editor built for seamless collaboration: edits propagate to every participant in real time over WebSockets. A Node.js backend fans out changes, Quill.js drives the editing surface, and Firebase handles persistence.",
-    tags: ["Node.js", "WebSockets", "Quill.js", "Firebase"],
-    architecture: [
-      { layer: "Editor", label: "Quill.js surface" },
-      { layer: "Transport", label: "WebSockets" },
-      { layer: "Server", label: "Node.js fan-out" },
-      { layer: "Store", label: "Firebase" },
-    ],
-    image: { src: synchroImg, alt: "SynchroCode — collaborative editor with live chat" },
   },
 ];
 
