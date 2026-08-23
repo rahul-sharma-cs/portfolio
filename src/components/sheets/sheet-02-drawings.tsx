@@ -23,7 +23,7 @@ function PlateImage({ image }: { image: NonNullable<Project["image"]> }) {
           src={image.src}
           alt={image.alt}
           quality={95}
-          className="duotone w-full"
+          className="w-full"
           sizes="(max-width: 768px) 100vw, 40vw"
         />
         <figcaption className="mt-2 font-mono text-anno-sm uppercase tracking-[0.12em] text-pencil">
