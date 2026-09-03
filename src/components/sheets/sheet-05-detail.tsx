@@ -40,7 +40,7 @@ export default function Sheet05Detail() {
             the two meet.
           </p>
           <p className="mt-5 max-w-[58ch] text-body-lg leading-[1.75] text-pencil">
-            Between classes and shifts keeping 450+ lab machines alive, I&apos;m usually deep in
+            Between TA office hours and shifts keeping the engineering college&apos;s computer labs alive, I&apos;m usually deep in
             LeetCode or reading about system design, AI, distributed systems, and low-level
             programming. Off the clock: video games and philosophy — usually not at the same time.
           </p>

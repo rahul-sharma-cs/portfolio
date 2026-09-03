@@ -9,7 +9,6 @@ const socialRefs = [
   { label: "GITHUB", handle: "RAHUL-SHARMA-CS", href: siteConfig.socials.github },
   { label: "LINKEDIN", handle: "RAHULSHARMA-CS", href: siteConfig.socials.linkedin },
   { label: "X", handle: "RAHULSHARMA_SD", href: siteConfig.socials.twitter },
-  { label: "INSTAGRAM", handle: "_RAHULL._.7", href: siteConfig.socials.instagram },
 ] as const;
 
 export default function Sheet06SignOff() {

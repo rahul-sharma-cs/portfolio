@@ -28,7 +28,7 @@ export const siteConfig = {
   /** Title-block STATUS field + ticker copy. */
   status: "SEEKING FULL-TIME",
   gradDate: "DEC 2026",
-  current: "IT TECHNICIAN — GMU ENGINEERING",
+  current: "TEACHING ASSISTANT — GMU CS",
   location: "Fairfax, VA",
   email: "rs.rahul1@outlook.com",
   resume: "/Rahul_Resume.pdf",
@@ -38,7 +38,6 @@ export const siteConfig = {
     github: "https://github.com/rahul-sharma-cs",
     linkedin: "https://linkedin.com/in/rahulsharma-cs",
     twitter: "https://x.com/rahulsharma_sd",
-    instagram: "https://instagram.com/_rahull._.7",
   },
 } as const;
 
@@ -62,9 +61,9 @@ export const projects: readonly Project[] = [
   {
     id: "drive",
     title: "Drive",
-    date: "AUG 2026",
-    spec: "A self-hosted file store built around one hard problem: uploading a very large file over a connection that will not stay up. One Go binary serves the API and the React app; file bytes go browser-to-storage over presigned S3 multipart URLs, every confirmed part is durable state in Postgres, and an interrupted upload — dropped connection, closed tab, killed server — resumes from the last confirmed part.",
-    tags: ["Go", "React", "TypeScript", "PostgreSQL", "S3 Multipart", "Docker"],
+    date: "JUL — SEP 2026",
+    spec: "A self-hosted file store built around one hard problem: uploading a very large file over a connection that will not stay up. One Go binary serves the API and the React/TypeScript app; bytes travel browser-to-storage over presigned S3 multipart URLs, every confirmed part is durable state in Postgres, and interrupted uploads resume from the last confirmed part. Files share over revocable links with optional password, expiry, and download caps; Playwright drives the browser proof.",
+    tags: ["Go", "React", "TypeScript", "PostgreSQL", "S3 Multipart", "Docker", "Playwright"],
     architecture: [
       { layer: "UI", label: "React file manager" },
       { layer: "Transfer", label: "Presigned multipart PUTs" },
@@ -105,25 +104,36 @@ export const projects: readonly Project[] = [
 
 /** SHT 03 — Bill of Materials. */
 export const skills = [
-  { item: "001", category: "Languages", spec: "Java · Python · C/C++ · Kotlin · JavaScript · TypeScript · PHP" },
-  { item: "002", category: "Web & App", spec: "React · Next.js · Angular.js · Django · Flask · FastAPI · Bootstrap · .NET · RESTful APIs" },
-  { item: "003", category: "Libraries", spec: "Node.js · TensorFlow · NumPy · JUnit" },
-  { item: "004", category: "Databases", spec: "SQL (MySQL, PostgreSQL) · MongoDB · Redis · Firebase · Supabase · Vector Databases · Convex" },
-  { item: "005", category: "Cloud & DevOps", spec: "AWS (EC2, S3) · Microsoft Azure · Git · Linux" },
+  { item: "001", category: "Languages", spec: "Java · Python · Go · C/C++ · Kotlin · JavaScript · TypeScript" },
+  { item: "002", category: "Web & App", spec: "React · Next.js · Django · Flask · FastAPI · Bootstrap · RESTful APIs" },
+  { item: "003", category: "Libraries", spec: "Node.js · NumPy · JUnit" },
+  { item: "004", category: "Databases", spec: "SQL (MySQL, PostgreSQL) · MongoDB · Redis · Firebase · Supabase" },
+  { item: "005", category: "Cloud & DevOps", spec: "Docker · AWS (EC2, S3) · S3-compatible object storage · Microsoft Azure · Git · Linux" },
 ] as const;
 
 /** SHT 04 — revision history, newest first. `approved` = the org mark. */
 export const revisions = [
   {
+    rev: "D",
+    date: "MAY 2026 — PRESENT",
+    role: "Undergraduate Teaching Assistant",
+    org: "George Mason University — Dept. of Computer Science",
+    approved: "GMU CS",
+    bullets: [
+      "CS 310 Data Structures, Summer 2026: weekly office hours and Piazza support for 100+ students across two sections — Java lists, trees, hash tables, graphs, and debugging code that would not run.",
+      "CS 405 Ethics and Law in Computing, Fall 2026: grading analysis essays and the assignments building toward the semester-long mock trial, and scoring the in-class trial.",
+    ],
+  },
+  {
     rev: "C",
-    date: "MAY 2025",
+    date: "JUN — AUG 2025",
     role: "Founding Engineer",
     org: "TheCollegeTech",
     approved: "TCT",
     bullets: [
-      "Architected a Learning Management System end-to-end: Supabase auth, account management, and role-based access control.",
-      "Course creation, enrollment, and content-management workflows on a TypeScript/React + Django REST stack with paginated, filtered SQL queries, maintained at 95% uptime.",
-      "Authored API documentation, implemented CI/CD with automated testing, conducted code reviews.",
+      "Built a Learning Management System with a TypeScript/React frontend and Django REST backend: authentication, account management, and role-based access control on Supabase.",
+      "Designed the course creation, enrollment, and content workflows, with paginated and filtered SQL queries.",
+      "Set up CI/CD with automated tests, wrote the API documentation, and ran code reviews.",
     ],
   },
   {
@@ -133,9 +143,9 @@ export const revisions = [
     org: "George Mason University",
     approved: "GMU CEC",
     bullets: [
-      "Automation scripts (Python, Bash, PowerShell) for Windows/macOS/Linux, automating deployment across 450+ lab computers.",
-      "Custom Linux server configurations and documentation that cut recurring support tickets by 30%; 99% uptime across 15–20 labs.",
-      "Internal ticketing tools improving average resolution time by 40% for 200+ faculty and staff.",
+      "Maintain 10–15 computer labs (~30 machines each) at ~95% uptime through automated imaging, troubleshooting, and software optimization.",
+      "Python, Bash, and PowerShell automation scripts for deployment and configuration across Windows, macOS, and Linux lab machines.",
+      "First-level support for faculty, staff, and graduate assistants; documentation and ticketing-system content that reduced repeat tickets.",
     ],
   },
   {
@@ -154,7 +164,7 @@ export const education = {
   gpa: 3.75,
   honors: "Dean's List F23 · S26",
   scholarship: "Mason Distinction Scholarship",
-  coursework: "Data Structures & Algorithms · Database Systems · ML · SWE · Operating Systems",
+  coursework: "Data Structures & Algorithms · Database Systems · Machine Learning · Software Engineering · Operating Systems",
   expected: "DEC 2026",
 } as const;
 

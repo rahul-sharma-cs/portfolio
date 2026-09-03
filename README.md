@@ -28,7 +28,8 @@ Other scripts: `npm run build`, `npm run start`, `npm run lint`, `npm run typech
 ## Editing content
 
 Everything person-specific lives in `src/lib/data.ts` — projects, skills,
-experience, socials. Adding a project is one object (image optional; add
+experience, socials — and mirrors the committed one-page résumé
+(`public/Rahul_Resume.pdf`), which is the source of truth for facts and dates. Adding a project is one object (image optional; add
 `links.github` / `links.live` and the "REV PENDING" stamp becomes real links).
 Replace `/public/Rahul_Resume.pdf` to update the résumé.
 
