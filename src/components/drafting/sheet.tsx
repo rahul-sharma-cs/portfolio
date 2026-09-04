@@ -39,10 +39,14 @@ export default function Sheet({
 
   return (
     <section ref={setRefs} id={id} className={`relative scroll-mt-20 overflow-x-clip py-20 sm:py-28 ${className}`}>
+      {/* overflow-anchor: Chromium restores scroll on reload via an anchor element, and
+          this span is the first candidate in each sheet. Its server-rendered parallax
+          offset (20px) differs from the hydrated one, so a reload near the top landed
+          19px down. Opting out of anchoring leaves the eyebrow, which never moves. */}
       <motion.span
         aria-hidden
         style={{ y: ghostY }}
-        className="pointer-events-none absolute -right-3 top-4 select-none font-sans text-[clamp(7rem,20vw,17rem)] font-extrabold leading-none text-transparent [-webkit-text-stroke:1px_rgb(var(--c-rule))]"
+        className="pointer-events-none absolute -right-3 top-4 select-none font-sans text-[clamp(7rem,20vw,17rem)] font-extrabold leading-none text-transparent [-webkit-text-stroke:1px_rgb(var(--c-rule))] [overflow-anchor:none]"
       >
         {link.num}
       </motion.span>
