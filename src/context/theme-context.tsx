@@ -54,14 +54,24 @@ export default function ThemeContextProvider({ children }: { children: React.Rea
       window.setTimeout(() => root.classList.remove("theme-fade"), 350);
       return;
     }
-    const x = e?.clientX ?? window.innerWidth - 40;
+    const W = window.innerWidth;
+    const H = window.innerHeight;
+    const x = e?.clientX ?? W - 40;
     const y = e?.clientY ?? 24;
-    const r = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+    const r = Math.hypot(Math.max(x, W - x), Math.max(y, H - y));
+    // Percentages, not px. Chrome 152's compositor runs px clip-path animations on
+    // the view-transition pseudo at half scale (origin and radius both land at 1/2),
+    // so the wipe started mid-header and stopped short of the corners. Percentage
+    // geometry renders correctly there and is identical in every other engine.
+    // A circle() percentage radius resolves against sqrt(w^2 + h^2) / sqrt(2).
+    const cx = (x / W) * 100;
+    const cy = (y / H) * 100;
+    const cr = ((r * Math.SQRT2) / Math.hypot(W, H)) * 100;
     const transition = doc.startViewTransition(applyToggle);
     transition.ready
       .then(() => {
         document.documentElement.animate(
-          { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${r}px at ${x}px ${y}px)`] },
+          { clipPath: [`circle(0% at ${cx}% ${cy}%)`, `circle(${cr}% at ${cx}% ${cy}%)`] },
           { duration: 500, easing: "ease-in-out", pseudoElement: "::view-transition-new(root)" }
         );
       })
