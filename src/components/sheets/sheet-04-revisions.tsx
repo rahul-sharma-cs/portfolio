@@ -59,7 +59,15 @@ export default function Sheet04Revisions() {
               <Counter value={education.gpa} decimals={2} />
             </p>
             <div className="mt-5">
-              <Stamp>{education.honors}</Stamp>
+              <Stamp>{education.honors.title}</Stamp>
+              <p className="mt-2 font-mono text-anno-sm uppercase tracking-[0.14em] text-pencil">
+                {education.honors.terms.split(" · ").map((term, i) => (
+                  <span key={term}>
+                    {i > 0 && " · "}
+                    <span className="whitespace-nowrap">{term}</span>
+                  </span>
+                ))}
+              </p>
             </div>
             <p className="mt-5 text-body-sm text-pencil">{education.scholarship}</p>
             <p className="mt-4 font-mono text-anno-sm uppercase tracking-[0.14em] text-pencil">Coursework</p>

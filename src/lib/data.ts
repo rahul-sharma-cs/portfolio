@@ -33,7 +33,7 @@ export const siteConfig = {
   email: "rs.rahul1@outlook.com",
   resume: "/Rahul_Resume.pdf",
   description:
-    "Software engineer and CS senior at George Mason University (Dec 2026). Previously founding engineer at TheCollegeTech. Portfolio drafted as an engineering drawing set.",
+    "Software engineer and CS senior at George Mason University (Dec 2026). Most recently a software engineer intern at Rise Consultancy Edu; previously founding engineer at TheCollegeTech. Portfolio drafted as an engineering drawing set.",
   socials: {
     github: "https://github.com/rahul-sharma-cs",
     linkedin: "https://linkedin.com/in/rahulsharma-cs",
@@ -62,7 +62,7 @@ export const projects: readonly Project[] = [
     id: "drive",
     title: "Drive",
     date: "JUL — SEP 2026",
-    spec: "A self-hosted file store built around one hard problem: uploading a very large file over a connection that will not stay up. One Go binary serves the API and the React/TypeScript app; bytes travel browser-to-storage over presigned S3 multipart URLs, every confirmed part is durable state in Postgres, and interrupted uploads resume from the last confirmed part. Files share over revocable links with optional password, expiry, and download caps; Playwright drives the browser proof.",
+    spec: "A self-hosted file store built around one hard problem: uploading a very large file over a connection that will not stay up. One Go binary serves the API and the React/TypeScript app; bytes travel browser-to-storage over presigned S3 multipart URLs, every confirmed part is durable state in Postgres, and interrupted uploads resume from the last confirmed part. Per-part MD5/ETag checks and ledger reconciliation carried an 11 GiB upload across 1,127 parts; a 220 MiB production round trip verified by SHA-256. Files share over revocable links with optional password, expiry, and download caps; Playwright drives the browser proof.",
     tags: ["Go", "React", "TypeScript", "PostgreSQL", "S3 Multipart", "Docker", "Playwright"],
     architecture: [
       { layer: "UI", label: "React file manager" },
@@ -104,24 +104,35 @@ export const projects: readonly Project[] = [
 
 /** SHT 03 — Bill of Materials. */
 export const skills = [
-  { item: "001", category: "Languages", spec: "Java · Python · Go · C/C++ · Kotlin · JavaScript · TypeScript" },
-  { item: "002", category: "Web & App", spec: "React · Next.js · Django · Flask · FastAPI · Bootstrap · RESTful APIs" },
-  { item: "003", category: "Libraries", spec: "Node.js · NumPy · JUnit" },
-  { item: "004", category: "Databases", spec: "SQL (MySQL, PostgreSQL) · MongoDB · Redis · Firebase · Supabase" },
-  { item: "005", category: "Cloud & DevOps", spec: "Docker · AWS (EC2, S3) · S3-compatible object storage · Microsoft Azure · Git · Linux" },
+  { item: "001", category: "Languages", spec: "Python · Go · TypeScript · JavaScript · Java · C++ · SQL · Bash · PowerShell" },
+  { item: "002", category: "Frontend", spec: "React · Next.js · Tailwind CSS" },
+  { item: "003", category: "Backend", spec: "REST APIs · FastAPI · Django REST Framework · Node.js" },
+  { item: "004", category: "Data & Infra", spec: "PostgreSQL · Redis · S3-compatible storage (AWS S3, Cloudflare R2) · Docker · Linux · Git · CI/CD" },
+  { item: "005", category: "Testing", spec: "Playwright · Vitest" },
 ] as const;
 
 /** SHT 04 — revision history, newest first. `approved` = the org mark. */
 export const revisions = [
   {
+    rev: "E",
+    date: "MAY — JUL 2026",
+    role: "Software Engineer Intern",
+    org: "Rise Consultancy Edu, Remote",
+    approved: "RISE EDU",
+    bullets: [
+      "Built a React/TypeScript expenditure chart for a client dashboard in a production full-stack app with payment integrations.",
+      "Traced misleading spending trends to sparse API data: normalized records to monthly intervals and zero-filled the gaps before rendering.",
+      "Evaluated charting libraries against the design system; shipped through Jira tickets and senior engineers' PR reviews to production.",
+    ],
+  },
+  {
     rev: "D",
     date: "MAY 2026 — PRESENT",
     role: "Undergraduate Teaching Assistant",
-    org: "George Mason University — Dept. of Computer Science",
+    org: "George Mason University",
     approved: "GMU CS",
     bullets: [
-      "CS 310 Data Structures, Summer 2026: weekly office hours and Piazza support for 100+ students across two sections — Java lists, trees, hash tables, graphs, and debugging code that would not run.",
-      "CS 405 Ethics and Law in Computing, Fall 2026: grading analysis essays and the assignments building toward the semester-long mock trial, and scoring the in-class trial.",
+      "CS 310 Data Structures (Summer 2026) and CS 405 Ethics and Law in Computing (Fall 2026): office hours, Piazza, and grading for 100+ students — from debugging Java trees and hash tables to scoring the mock trial.",
     ],
   },
   {
@@ -143,9 +154,8 @@ export const revisions = [
     org: "George Mason University",
     approved: "GMU CEC",
     bullets: [
-      "Maintain 10–15 computer labs (~30 machines each) at ~95% uptime through automated imaging, troubleshooting, and software optimization.",
-      "Python, Bash, and PowerShell automation scripts for deployment and configuration across Windows, macOS, and Linux lab machines.",
-      "First-level support for faculty, staff, and graduate assistants; documentation and ticketing-system content that reduced repeat tickets.",
+      "Keep 10–15 computer labs (~30 machines each) at ~95% uptime; Python, Bash, and PowerShell scripts automate imaging and configuration across Windows, macOS, and Linux.",
+      "Support faculty, staff, and graduate assistants; documented fixes cut repeat tickets.",
     ],
   },
   {
@@ -162,7 +172,7 @@ export const education = {
   school: "George Mason University",
   degree: "B.S. Computer Science",
   gpa: 3.75,
-  honors: "Dean's List F23 · S26",
+  honors: { title: "Dean's List", terms: "Fall 2023 · Spring 2026 · Summer 2026" },
   scholarship: "Mason Distinction Scholarship",
   coursework: "Data Structures & Algorithms · Database Systems · Machine Learning · Software Engineering · Operating Systems",
   expected: "DEC 2026",
