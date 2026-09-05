@@ -52,7 +52,7 @@ export default function Sheet({
       </motion.span>
       <div className="relative mx-auto w-full max-w-6xl px-5 sm:px-8">
         <Eyebrow className="mb-2 font-mono text-anno-sm font-medium uppercase tracking-[0.16em] text-pencil">
-          SHT {link.num}/06 — {eyebrow}
+          SHEET {link.num}/06 — {eyebrow}
         </Eyebrow>
         <RuleX className="mb-10" />
         {children}

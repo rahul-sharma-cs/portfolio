@@ -67,7 +67,7 @@ body {
 </style></head><body>
   <div class="frame"></div>
   <span class="crop tl"></span><span class="crop tr"></span><span class="crop bl"></span><span class="crop br"></span>
-  <p class="eyebrow mono">SHT 01/06 — TITLE BLOCK — GENERAL ARRANGEMENT</p>
+  <p class="eyebrow mono">SHEET 01/06 — TITLE BLOCK — GENERAL ARRANGEMENT</p>
   <h1 class="name">Rahul<br>Sharma</h1>
   <div class="dim mono" aria-hidden="true">
     <span class="tick"></span><span class="line"></span>

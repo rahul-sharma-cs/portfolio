@@ -61,7 +61,7 @@ export default function MeasurementNav() {
           onClick={() => setOpen((v) => !v)}
         >
           <span aria-hidden className="h-2 w-px bg-redline" />
-          SHT {active.num}/06<span className="hidden sm:inline"> — {active.name.toUpperCase()}</span>
+          SHEET {active.num}/06<span className="hidden sm:inline"> — {active.name.toUpperCase()}</span>
           <span aria-hidden className="text-pencil">{open ? "▴" : "▾"}</span>
         </button>
 

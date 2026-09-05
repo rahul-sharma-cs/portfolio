@@ -18,7 +18,7 @@ export default function SheetFooter() {
         aria-hidden
         className="pointer-events-none fixed bottom-3 right-8 z-30 hidden font-mono text-anno-sm uppercase tracking-[0.16em] text-pencil sm:block"
       >
-        Rahul Sharma — Drawing Set — SHT {num}/06
+        Rahul Sharma — Drawing Set — SHEET {num}/06
       </p>
     </>
   );
