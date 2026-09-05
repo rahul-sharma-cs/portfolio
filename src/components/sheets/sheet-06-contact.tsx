@@ -20,9 +20,11 @@ export default function Sheet06Contact() {
 
         <a
           href={`mailto:${siteConfig.email}`}
-          className="stretch-wdth break-all font-sans text-mail font-bold lowercase leading-none text-ink underline decoration-redline decoration-2 underline-offset-8 hover:text-redline"
+          className="stretch-wdth break-words font-sans text-mail font-bold lowercase leading-none text-ink underline decoration-redline decoration-2 underline-offset-8 hover:text-redline"
         >
-          {siteConfig.email}
+          {/* Break only after the @ on narrow screens; break-all used to split "outlook.c|om". */}
+          {siteConfig.email.split("@")[0]}@<wbr />
+          {siteConfig.email.split("@")[1]}
         </a>
 
         <RuleX className="w-full" />
