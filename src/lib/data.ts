@@ -7,7 +7,8 @@ import xpenseImg from "../../public/xpense.png";
  * THE content file. Everything person-specific lives here.
  *  - Add a project:   append one object to `projects` (image optional).
  *  - Add a repo link: set `links.github` / `links.live` on the project —
- *    the "REV PENDING" stamp is replaced by real links automatically.
+ *    the plate renders REF links; without them the links slot stays empty
+ *    (the "REV PENDING" stamp exists but is switched off in sheet-02-drawings).
  *  - New résumé:      replace /public/Rahul_Resume.pdf (same filename).
  * ─────────────────────────────────────────────────────────────────
  */
@@ -53,7 +54,7 @@ export type Project = {
   architecture: readonly { layer: string; label: string }[];
   /** Optional — image-less plates give the exploded view full width. */
   image?: { src: StaticImageData; alt: string };
-  /** Optional — when absent the plate shows the REV PENDING stamp. */
+  /** Optional — when absent the links slot is empty (REV PENDING stamp is switched off). */
   links?: { github?: string; live?: string };
 };
 

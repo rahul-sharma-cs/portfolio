@@ -13,6 +13,9 @@ import ExplodedView from "@/components/drafting/exploded-view";
 import CropMarks from "@/components/drafting/crop-marks";
 import { useMeasuredWidth } from "@/lib/hooks";
 
+/** Linkless plates can carry a quiet "Rev pending — demo on request" stamp. Switched off for now (user call, 2026-09-05); flip to re-enable. */
+const REV_PENDING_STAMP = false;
+
 function PlateImage({ image }: { image: NonNullable<Project["image"]> }) {
   const { ref, width } = useMeasuredWidth<HTMLDivElement>();
   return (
@@ -92,9 +95,9 @@ function Plate({ project, index }: { project: Project; index: number }) {
                   </li>
                 )}
               </ul>
-            ) : (
+            ) : REV_PENDING_STAMP ? (
               <Stamp variant="quiet">Rev pending — demo on request</Stamp>
-            )}
+            ) : null}
           </div>
         </div>
       </div>
