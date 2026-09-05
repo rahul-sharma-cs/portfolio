@@ -111,8 +111,20 @@ export const skills = [
   { item: "005", category: "Testing", spec: "Playwright · Vitest" },
 ] as const;
 
-/** SHT 04 — revision history, newest first. `approved` = the org mark. */
-export const revisions = [
+export type Revision = {
+  rev: string;
+  date: string;
+  role: string;
+  org: string;
+  /** The org mark in the APPROVED column. */
+  approved: string;
+  bullets: readonly string[];
+  /** Optional in-page cross-reference rendered as a link after the bullets ("see detail" callout). */
+  ref?: { label: string; hash: string };
+};
+
+/** SHT 04 — revision history, newest first. */
+export const revisions: readonly Revision[] = [
   {
     rev: "E",
     date: "MAY — JUL 2026",
@@ -164,9 +176,10 @@ export const revisions = [
     role: "B.S. Computer Science — enrolled",
     org: "George Mason University",
     approved: "GMU",
-    bullets: ["Initial release. See education detail block."],
+    bullets: [],
+    ref: { label: "Initial release — see education detail", hash: "#education" },
   },
-] as const;
+];
 
 export const education = {
   school: "George Mason University",

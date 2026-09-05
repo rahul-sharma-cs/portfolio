@@ -43,12 +43,20 @@ export default function Sheet04Revisions() {
                     <span className="text-ink">{b}</span>
                   </li>
                 ))}
+                {rev.ref && (
+                  <li className="flex gap-2.5">
+                    <span aria-hidden className="mt-[0.55em] h-px w-3 shrink-0 bg-rule" />
+                    <a href={rev.ref.hash} className="text-redline underline underline-offset-4 hover:no-underline">
+                      {rev.ref.label} →
+                    </a>
+                  </li>
+                )}
               </ul>
             </motion.li>
           ))}
         </ol>
 
-        <aside className="lg:col-span-4">
+        <aside id="education" className="scroll-mt-20 lg:col-span-4">
           <div className="relative border border-ink p-6">
             <p className="font-mono text-anno-sm uppercase tracking-[0.16em] text-pencil">Detail — Education</p>
             <RuleX className="mb-5 mt-2" />
