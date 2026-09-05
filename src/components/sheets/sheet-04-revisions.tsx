@@ -67,15 +67,24 @@ export default function Sheet04Revisions() {
               <Counter value={education.gpa} decimals={2} />
             </p>
             <div className="mt-5">
-              <Stamp>{education.honors.title}</Stamp>
-              <p className="mt-2 font-mono text-anno-sm uppercase tracking-[0.14em] text-pencil">
-                {education.honors.terms.split(" · ").map((term, i) => (
-                  <span key={term}>
-                    {i > 0 && " · "}
-                    <span className="whitespace-nowrap">{term}</span>
+              {/* One impression, two cells: the label on the left, the three terms stacked on the
+                  right so a new line lands under the first term, never under the label. On the
+                  1024–1279 px band the education box is ~240px wide, so the label drops to the
+                  terms' size there; everywhere else it is a step larger. */}
+              <Stamp className="w-full">
+                <span className="grid grid-cols-[auto_1fr] items-start gap-x-3.5 text-left lg:gap-x-2.5 xl:gap-x-3.5">
+                  <span className="whitespace-nowrap text-anno-lg lg:text-anno-sm xl:text-anno-lg">
+                    {education.honors.title}:
                   </span>
-                ))}
-              </p>
+                  <span className="flex flex-col">
+                    {education.honors.terms.split(" · ").map((term) => (
+                      <span key={term} className="whitespace-nowrap">
+                        {term}
+                      </span>
+                    ))}
+                  </span>
+                </span>
+              </Stamp>
             </div>
             <p className="mt-5 text-body-sm text-pencil">{education.scholarship}</p>
             <p className="mt-4 font-mono text-anno-sm uppercase tracking-[0.14em] text-pencil">Coursework</p>
