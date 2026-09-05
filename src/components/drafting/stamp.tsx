@@ -5,7 +5,8 @@ import type { ReactNode } from "react";
 
 /**
  * Rubber stamp. `thunk` = spring slam (HARD CAP: 4 uses sitewide — hero status,
- * Dean's List, Approved, one reserve). `quiet` = fade (per-plate REV PENDING marks).
+ * Dean's List, two in reserve). `quiet` = fade (the per-plate REV PENDING mark,
+ * currently switched off in sheet-02-drawings).
  *
  * `mode` controls the entrance trigger:
  *  - "view" (default): whileInView — plays when scrolled into the viewport.

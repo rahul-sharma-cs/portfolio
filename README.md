@@ -2,7 +2,7 @@
 
 Personal portfolio drafted as an engineering drawing set: vellum paper and graph
 grid by day, cyanotype blueprint by night. Six sheets — title block, drawings,
-bill of materials, revision history, detail view, sign-off.
+bill of materials, revision history, detail view, contact.
 
 **Live site:** [www.rahulsharma-cs.site](https://www.rahulsharma-cs.site)
 

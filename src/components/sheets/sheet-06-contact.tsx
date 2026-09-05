@@ -2,7 +2,6 @@
 
 import { links, siteConfig } from "@/lib/data";
 import Sheet from "@/components/drafting/sheet";
-import Stamp from "@/components/drafting/stamp";
 import { RuleX } from "@/components/drafting/rule";
 
 const socialRefs = [
@@ -11,16 +10,13 @@ const socialRefs = [
   { label: "X", handle: "RAHULSHARMA_SD", href: siteConfig.socials.twitter },
 ] as const;
 
-export default function Sheet06SignOff() {
+export default function Sheet06Contact() {
   return (
-    <Sheet link={links[5]} eyebrow="Sign-Off — Release" threshold={0.6}>
+    <Sheet link={links[5]} eyebrow="Contact" threshold={0.6}>
       <div className="flex flex-col items-start gap-10">
-        <div className="flex flex-wrap items-center gap-6">
-          <h3 className="wdth-expanded max-w-[24ch] font-sans text-head-lg font-extrabold uppercase leading-tight tracking-tight">
-            This design is released for interview.
-          </h3>
-          <Stamp>Approved</Stamp>
-        </div>
+        <h3 className="wdth-expanded font-sans text-head-lg font-extrabold uppercase leading-tight tracking-tight">
+          Contact:
+        </h3>
 
         <a
           href={`mailto:${siteConfig.email}`}

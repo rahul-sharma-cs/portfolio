@@ -19,7 +19,7 @@ export const links = [
   { name: "Spec", hash: "#spec", num: "03" },
   { name: "Rev", hash: "#rev", num: "04" },
   { name: "Detail", hash: "#detail", num: "05" },
-  { name: "Sign-Off", hash: "#sign-off", num: "06" },
+  { name: "Contact", hash: "#contact", num: "06" },
 ] as const;
 
 export const siteConfig = {
