@@ -123,6 +123,10 @@ html.theme-fade * {
 /* V1/V2 switch — names for the cross-document morph (see plain.css) */
 .version-switch { view-transition-name: version-switch; }
 .version-switch .thumb { view-transition-name: version-thumb; }
+/* Any other view transition (the theme wipe) must reveal the switch with the page. */
+html:active-view-transition:not(:active-view-transition-type(version-switch)) :is(.version-switch, .version-switch .thumb) {
+  view-transition-name: none;
+}
 
 @view-transition { navigation: auto; types: version-switch; }
 html:active-view-transition-type(version-switch)::view-transition-old(root) { animation: none; }
