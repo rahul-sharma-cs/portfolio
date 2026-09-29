@@ -73,7 +73,7 @@ strong { font-weight: 600; color: var(--text); }
 
 img { display: block; width: 100%; height: auto; }
 
-.intro { display: flow-root; }
+.hackathons { display: flow-root; }
 
 .photos {
   float: right;
@@ -81,8 +81,8 @@ img { display: block; width: 100%; height: auto; }
   margin: 6px 0 16px 28px;
 }
 
-/* the source photo is landscape; the crop centres on the face */
-.photos img { aspect-ratio: 4 / 5; object-fit: cover; object-position: 14% 50%; }
+.photos img { aspect-ratio: 4 / 3; object-fit: cover; }
+.photos img + img { margin-top: 12px; }
 
 footer {
   padding-top: 20px;

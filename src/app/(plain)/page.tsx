@@ -1,9 +1,15 @@
 import Image from "next/image";
-import portrait from "../../../public/portrait.jpg";
+import team from "../../../public/hackathon-shellhacks-team.jpg";
+import demo from "../../../public/hackathon-shellhacks-demo.jpg";
 import { siteConfig } from "@/lib/data";
 import { plain, type PlainEntry } from "@/lib/plain";
 
 const ext = { target: "_blank", rel: "noopener" } as const;
+
+// XPen$e was built at ShellHacks 2024, so it sits beside the hackathon photos.
+const HACKATHON_PROJECT = "XPen$e";
+const projects = plain.projects.filter((e) => e.name !== HACKATHON_PROJECT);
+const hackathonProject = plain.projects.find((e) => e.name === HACKATHON_PROJECT);
 
 function Entry({ entry }: { entry: PlainEntry }) {
   return (
@@ -45,9 +51,6 @@ export default function PlainPage() {
       </header>
 
       <section className="intro">
-        <figure className="photos">
-          <Image src={portrait} alt={siteConfig.name} preload sizes="(max-width: 520px) 45vw, 202px" />
-        </figure>
         {plain.intro.map((p) => (
           <p key={p}>{p}</p>
         ))}
@@ -62,10 +65,25 @@ export default function PlainPage() {
 
       <section id="projects">
         <h2>Projects</h2>
-        {plain.projects.map((e) => (
+        {projects.map((e) => (
           <Entry key={e.name} entry={e} />
         ))}
-        <p>{plain.hackathons}</p>
+        <div className="hackathons">
+          <figure className="photos">
+            <Image
+              src={team}
+              alt="Rahul and his teammates under the ShellHacks arch, ShellHacks 2024"
+              sizes="(max-width: 520px) 45vw, 185px"
+            />
+            <Image
+              src={demo}
+              alt="Rahul demoing XPen$e with his team at ShellHacks 2024"
+              sizes="(max-width: 520px) 45vw, 185px"
+            />
+          </figure>
+          {hackathonProject && <Entry entry={hackathonProject} />}
+          <p>{plain.hackathons}</p>
+        </div>
       </section>
 
       <section id="education">

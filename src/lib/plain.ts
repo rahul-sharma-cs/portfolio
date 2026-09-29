@@ -17,7 +17,6 @@ export const plain = {
   tagline: "Software engineer finishing a B.S. in Computer Science at George Mason.",
   intro: [
     "I graduate from George Mason University in December 2026. I'm in Fairfax, Virginia, and available for full-time roles from January 2027.",
-    "I got into software by using it. The tools I relied on were almost right, and I kept reaching for the one thing they didn't do. Most of what I build still starts there.",
   ],
   work: [
     {
@@ -34,7 +33,7 @@ export const plain = {
     {
       name: "Airstitch",
       href: "https://airstitch.ai",
-      lead: "Software Engineer Intern, early 2026",
+      lead: "Software Engineer Intern, December 2025 to February 2026",
       body: "An AI startup with two founders, since acquired. Built and tested the OAuth flow new users went through to connect their first integration, traced auth and API edge cases end to end, and wrote the in-app copy for that flow. Worked with users on Slack every day and shipped fixes the same day.",
     },
     {
@@ -67,6 +66,6 @@ export const plain = {
   education: {
     name: "George Mason University",
     lead: "B.S. Computer Science, August 2022 to December 2026",
-    body: "GPA 3.75. Mason Distinction Scholarship ($72K over four years). Dean's List in Fall 2023, Spring 2026 and Summer 2026.",
+    body: "Mason Distinction Scholarship ($72K). Dean's List in Fall 2023, Spring 2026 and Summer 2026.",
   } satisfies PlainEntry,
 } as const;
