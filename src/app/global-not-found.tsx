@@ -3,7 +3,7 @@ import "./(plain)/plain.css";
 import { newsreader } from "./(plain)/font";
 
 export const metadata: Metadata = {
-  title: "Page not found — Rahul Sharma",
+  title: "Page not found - Rahul Sharma",
 };
 
 export default function GlobalNotFound() {

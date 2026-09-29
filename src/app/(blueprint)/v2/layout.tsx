@@ -10,21 +10,9 @@ import SheetFooter from "@/components/chrome/sheet-footer";
 import CrosshairCursor from "@/components/chrome/crosshair-cursor";
 import VersionSwitch from "@/components/version-switch";
 import { siteConfig } from "@/lib/data";
+import { siteMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  metadataBase: new URL("https://www.rahulsharma-cs.site"),
-  title: `${siteConfig.name} — Drawing Set`,
-  description: siteConfig.description,
-  alternates: { canonical: "/v2" },
-  openGraph: {
-    title: `${siteConfig.name} — ${siteConfig.role}`,
-    description: siteConfig.description,
-    url: "/v2",
-    type: "website",
-    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Rahul Sharma — Software Engineer. Portfolio drafted as an engineering drawing set." }],
-  },
-  twitter: { card: "summary_large_image" },
-};
+export const metadata: Metadata = siteMetadata("/v2", `${siteConfig.name} - Drawing Set`);
 
 export const viewport: Viewport = {
   themeColor: [

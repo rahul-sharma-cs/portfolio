@@ -34,7 +34,7 @@ export const siteConfig = {
   email: "rs.rahul1@outlook.com",
   resume: "/Rahul_Resume.pdf",
   description:
-    "Software engineer and CS senior at George Mason University (Dec 2026). Most recently a software engineer intern at Rise Consultancy Edu; previously founding engineer at TheCollegeTech. Portfolio drafted as an engineering drawing set.",
+    "Software engineer finishing a CS degree at George Mason in December 2026, most recently interning at Rise Consultancy Edu. Available full-time from January 2027.",
   socials: {
     github: "https://github.com/rahul-sharma-cs",
     linkedin: "https://linkedin.com/in/rahulsharma-cs",
