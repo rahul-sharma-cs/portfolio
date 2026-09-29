@@ -4,18 +4,28 @@
  *   src/app/favicon.ico     16/32/48 px PNG-in-ICO, transparent ground
  *   src/app/icon.png        192×192, transparent ground
  *   src/app/apple-icon.png  180×180 on the V1 cream (iOS fills transparency black)
+ *   src/app/icon.svg        the same R as a vector <path>, framed like the 32px
+ *                           ICO image; turns cream under prefers-color-scheme:
+ *                           dark so it stays visible on dark tabs
  *
  *   node scripts/generate-icons.mjs
  *
  * No npm deps: headless Chrome draws each size on a <canvas> (centred on the
  * glyph's measured ink box, not the em box) and --dump-dom hands back the
- * PNG data URLs; the ICO container is written by hand below.
+ * PNG data URLs; the ICO container is written by hand below. The SVG outline
+ * comes from the same woff2 via fontkit (after wawoff2 decompression, since
+ * fontkit's getVariation breaks on WOFF2 buffers).
  */
 import { execFileSync } from "node:child_process";
 import { writeFileSync, mkdtempSync } from "node:fs";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
+import { createRequire } from "node:module";
 import { newsreaderCss } from "./newsreader.mjs";
+
+const require = createRequire(import.meta.url);
+const fontkit = require("fontkit");
+const wawoff2 = require("wawoff2");
 
 const ROOT = resolve(import.meta.dirname, "..");
 const APP = join(ROOT, "src", "app");
@@ -107,4 +117,39 @@ writeFileSync(join(APP, "apple-icon.png"), pngs.apple);
 for (const [id, png] of Object.entries(pngs)) {
   console.log(`${id}: ${png.readUInt32BE(16)}x${png.readUInt32BE(20)}, ${png.length} bytes`);
 }
-console.log("wrote src/app/favicon.ico, icon.png, apple-icon.png");
+
+// SVG: extract the R outline from the woff2 the canvas used. Browsers draw a
+// tab icon at 16 CSS px (32 device px on retina), so frame it like ico32 and
+// pick the optical size Chrome's auto optical sizing gave that render
+// (opsz = font px, which itself depends on the ink height, hence the loop).
+const SVG_FILL = renders.find((r) => r.id === "ico32").fill;
+const woff2Url = fonts.match(/url\((data:font\/woff2;base64,[^)]+)\)/)?.[1];
+if (!woff2Url) throw new Error("no woff2 in Newsreader CSS");
+const font = fontkit.create(Buffer.from(await wawoff2.decompress(Buffer.from(woff2Url.split(",")[1], "base64"))));
+const upem = font.unitsPerEm;
+const { min, max } = font.variationAxes.opsz;
+let opsz = font.variationAxes.opsz.default;
+let glyph;
+for (let i = 0; i < 4; i++) {
+  glyph = font.getVariation({ opsz }).glyphsForString("R")[0];
+  const inkH = glyph.path.bbox.maxY - glyph.path.bbox.minY;
+  opsz = Math.min(max, Math.max(min, (32 * SVG_FILL * upem) / inkH));
+}
+const { minX, minY, maxX, maxY } = glyph.path.bbox;
+const V = 32; // viewBox side
+const k = (V * SVG_FILL) / (maxY - minY);
+const ox = (V - (maxX - minX) * k) / 2 - minX * k;
+const oy = (V - (maxY - minY) * k) / 2 + maxY * k; // font y is up, SVG y is down
+const n = (v) => String(Math.round(v * 100) / 100);
+const pt = (x, y) => `${n(ox + x * k)} ${n(oy - y * k)}`;
+const d = glyph.path.commands
+  .map(({ command, args }) => {
+    const pairs = [];
+    for (let i = 0; i < args.length; i += 2) pairs.push(pt(args[i], args[i + 1]));
+    return { moveTo: "M", lineTo: "L", quadraticCurveTo: "Q", bezierCurveTo: "C", closePath: "Z" }[command] + pairs.join(" ");
+  })
+  .join("");
+const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${V} ${V}"><style>path{fill:${INK}}@media (prefers-color-scheme:dark){path{fill:${CREAM}}}</style><path d="${d}"/></svg>\n`;
+writeFileSync(join(APP, "icon.svg"), svg);
+console.log(`svg: opsz ${n(opsz)}, ${svg.length} bytes`);
+console.log("wrote src/app/favicon.ico, icon.png, apple-icon.png, icon.svg");
