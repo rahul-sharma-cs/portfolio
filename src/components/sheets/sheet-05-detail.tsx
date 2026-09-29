@@ -16,9 +16,9 @@ export default function Sheet05Detail() {
 
         <div data-prose className="md:col-span-8">
           <p className="max-w-[58ch] text-body-lg leading-[1.75] text-ink">
-            I&apos;m Rahul — a CS senior at George Mason, most recently a software engineer intern at
-            Rise Consultancy Edu, and before that at Airstitch and as founding engineer at TheCollegeTech,
-            where I designed systems and then lived with my decisions. I care about
+            I&apos;m Rahul — a CS senior at George Mason, previously a software engineer intern at
+            Airstitch and founding engineer at TheCollegeTech, where I designed systems and then lived
+            with my decisions. I care about
             interfaces that feel considered, backends that don&apos;t fall over, and the space where
             the two meet.
           </p>

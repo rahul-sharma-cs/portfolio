@@ -20,11 +20,6 @@ export const plain = {
   ],
   work: [
     {
-      name: "Rise Consultancy Edu",
-      lead: "Software Engineer Intern, May to July 2026",
-      body: "Fixed a client dashboard's spending chart, which showed false trends because the API skipped empty months, by normalizing the data to monthly intervals before rendering.",
-    },
-    {
       name: "George Mason University",
       href: "https://www.gmu.edu",
       lead: "Undergraduate Teaching Assistant, since May 2026",
@@ -33,12 +28,12 @@ export const plain = {
     {
       name: "Airstitch",
       href: "https://airstitch.ai",
-      lead: "Software Engineer Intern, December 2025 to February 2026",
+      lead: "Software Engineer Intern, October to December 2025",
       body: "An AI startup with two founders, since acquired. Built and tested the OAuth flow new users went through to connect their first integration, traced auth and API edge cases end to end, and wrote the in-app copy for that flow. Worked with users on Slack every day and shipped fixes the same day.",
     },
     {
       name: "TheCollegeTech",
-      lead: "Founding Engineer, June to August 2025",
+      lead: "Founding Engineer, September to November 2025",
       body: "Built a learning management system on React, TypeScript and Django REST, with role-based access on Supabase, CI/CD and API documentation.",
     },
   ] satisfies PlainEntry[],

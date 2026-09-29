@@ -34,7 +34,7 @@ export const siteConfig = {
   email: "rs.rahul1@outlook.com",
   resume: "/Rahul_Resume.pdf",
   description:
-    "Software engineer finishing a CS degree at George Mason in December 2026, most recently interning at Rise Consultancy Edu. Available full-time from January 2027.",
+    "Software engineer finishing a CS degree at George Mason in December 2026, previously interning at Airstitch. Available full-time from January 2027.",
   socials: {
     github: "https://github.com/rahul-sharma-cs",
     linkedin: "https://linkedin.com/in/rahulsharma-cs",
@@ -127,18 +127,6 @@ export type Revision = {
 /** SHT 04 — revision history, newest first. */
 export const revisions: readonly Revision[] = [
   {
-    rev: "F",
-    date: "MAY — JUL 2026",
-    role: "Software Engineer Intern",
-    org: "Rise Consultancy Edu, Remote",
-    approved: "RISE EDU",
-    bullets: [
-      "Built a React/TypeScript expenditure chart for a client dashboard in a production full-stack app with payment integrations.",
-      "Traced misleading spending trends to sparse API data: normalized records to monthly intervals and zero-filled the gaps before rendering.",
-      "Evaluated charting libraries against the design system; shipped through Jira tickets and senior engineers' PR reviews to production.",
-    ],
-  },
-  {
     rev: "E",
     date: "MAY 2026 — PRESENT",
     role: "Undergraduate Teaching Assistant",
@@ -150,7 +138,7 @@ export const revisions: readonly Revision[] = [
   },
   {
     rev: "D",
-    date: "DEC 2025 — FEB 2026",
+    date: "OCT — DEC 2025",
     role: "Software Engineer Intern",
     org: "Airstitch",
     approved: "AIRSTITCH",
@@ -162,7 +150,7 @@ export const revisions: readonly Revision[] = [
   },
   {
     rev: "C",
-    date: "JUN — AUG 2025",
+    date: "SEP — NOV 2025",
     role: "Founding Engineer",
     org: "TheCollegeTech",
     approved: "TCT",
