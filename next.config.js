@@ -18,4 +18,7 @@ module.exports = {
     NEXT_PUBLIC_BUILD_DATE: new Date().toISOString().slice(0, 10),
   },
   images: { qualities: [75, 95] },
+  // Two root layouts (V1 plain at /, V2 blueprint at /v2) — no single layout
+  // can wrap a 404, so unmatched URLs use app/global-not-found.tsx.
+  experimental: { globalNotFound: true },
 };
