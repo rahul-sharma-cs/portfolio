@@ -77,7 +77,7 @@ export const projects: readonly Project[] = [
   {
     id: "vidya-lms",
     title: "Vidya LMS",
-    date: "JUL 2025",
+    date: "SEP — NOV 2025",
     spec: "A canvas-style learning management system where moderators create courses, assign instructors, and manage enrollments. Role-based access spans users, instructors, moderators, and admins via Supabase auth; course materials — PDFs, videos, quizzes — live in Azure Blob Storage over a relational PostgreSQL schema. The React/TypeScript frontend serves dynamic dashboards, assignment tracking, and calendar-based progress views.",
     tags: ["React", "TypeScript", "Supabase", "Azure Blob Storage", "PostgreSQL"],
     architecture: [
@@ -187,7 +187,7 @@ export const education = {
   degree: "B.S. Computer Science",
   honors: { title: "Dean's List", terms: "Fall 2023 · Spring 2026 · Summer 2026" },
   scholarship: "Mason Distinction Scholarship ($72K)",
-  coursework: "Data Structures & Algorithms · Database Systems · Machine Learning · Software Engineering · Operating Systems",
+  coursework: "Data Structures & Algorithms · Database Systems · Software Engineering · Operating Systems",
   expected: "DEC 2026",
 } as const;
 

@@ -47,7 +47,7 @@ export const plain = {
     },
     {
       name: "Vidya LMS",
-      lead: "July 2025",
+      lead: "September to November 2025",
       body: "A Canvas-style learning platform where moderators create courses, assign instructors and manage enrollments. Role-based access runs on Supabase auth, course materials live in Azure Blob Storage over PostgreSQL, and the React/TypeScript front end tracks assignments and progress.",
     },
     {
