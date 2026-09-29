@@ -1,0 +1,98 @@
+/* V1 — the sristhuthi.com template (captured 2026-09-29, see
+   docs/superpowers/prototypes/) with Rahul's palette. Plain CSS: V1 loads no Tailwind. */
+:root {
+  --bg: #FAF9F5;
+  --text: #1F1E1B;
+  --body: #2A2925;
+  --muted: #6B6860;
+  --link: #B4532F;
+  --link-visited: #8F3F20;
+  --rule: #E7E6E1;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--body);
+  font-family: var(--font-serif), Georgia, "Times New Roman", serif;
+  font-size: 17px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 48px 28px 72px;
+}
+
+header { margin-bottom: 40px; }
+
+h1 {
+  margin: 0 0 10px;
+  font-size: 1.7rem;
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--text);
+}
+
+.tagline {
+  margin: 0 0 18px;
+  color: var(--muted);
+}
+
+header nav { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+
+section { margin-bottom: 40px; }
+
+section + section {
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+}
+
+section:first-of-type + section { border-top: 1px solid var(--rule); }
+
+h2 {
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+p { margin: 0 0 16px; }
+p:last-child { margin-bottom: 0; }
+
+a { color: var(--link); text-decoration: underline; text-underline-offset: 2px; }
+a:visited { color: var(--link-visited); }
+
+strong { font-weight: 600; color: var(--text); }
+
+img { display: block; width: 100%; height: auto; }
+
+.intro { display: flow-root; }
+
+.photos {
+  float: right;
+  width: 30%;
+  margin: 6px 0 16px 28px;
+}
+
+/* the source photo is landscape; the crop centres on the face */
+.photos img { aspect-ratio: 4 / 5; object-fit: cover; object-position: 14% 50%; }
+
+footer {
+  padding-top: 20px;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 15px;
+}
+
+@media (max-width: 520px) {
+  main { padding: 36px 20px 56px; }
+  h1 { font-size: 1.5rem; }
+  .photos { width: 45%; margin: 4px 0 12px 18px; }
+}
