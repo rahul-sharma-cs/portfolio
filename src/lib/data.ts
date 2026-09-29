@@ -90,8 +90,8 @@ export const projects: readonly Project[] = [
   {
     id: "xpense",
     title: "XPen$e",
-    date: "DEC 2024",
-    spec: "A wallet app that answers one question at the register: which card? Merchant data is read over NFC/EMV, located via the Google Maps API, and fed to a Perplexity AI model that recommends the card maximizing rewards for that purchase. Auth0 handles authentication; Supabase stores card metadata; the frontend is Next.js.",
+    date: "SEP 2024",
+    spec: "Built in 48 hours with two teammates at ShellHacks 2024. A wallet app that answers one question at the register: which card? Merchant data is read over NFC/EMV, located via the Google Maps API, and fed to a Perplexity AI model that recommends the card maximizing rewards for that purchase. Auth0 handles authentication; Supabase stores card metadata; the frontend is Next.js.",
     tags: ["Next.js", "Supabase", "Auth0", "NFC", "Google Maps API", "Perplexity AI"],
     architecture: [
       { layer: "Capture", label: "NFC/EMV merchant read" },
@@ -127,7 +127,7 @@ export type Revision = {
 /** SHT 04 — revision history, newest first. */
 export const revisions: readonly Revision[] = [
   {
-    rev: "E",
+    rev: "F",
     date: "MAY — JUL 2026",
     role: "Software Engineer Intern",
     org: "Rise Consultancy Edu, Remote",
@@ -139,13 +139,25 @@ export const revisions: readonly Revision[] = [
     ],
   },
   {
-    rev: "D",
+    rev: "E",
     date: "MAY 2026 — PRESENT",
     role: "Undergraduate Teaching Assistant",
     org: "George Mason University",
     approved: "GMU CS",
     bullets: [
       "CS 310 Data Structures (Summer 2026) and CS 405 Ethics and Law in Computing (Fall 2026): office hours, Piazza, and grading for 100+ students — from debugging Java trees and hash tables to scoring the mock trial.",
+    ],
+  },
+  {
+    rev: "D",
+    date: "DEC 2025 — FEB 2026",
+    role: "Software Engineer Intern",
+    org: "Airstitch",
+    approved: "AIRSTITCH",
+    bullets: [
+      "AI startup with two founders, since acquired.",
+      "Built and tested the OAuth flow new users went through to connect their first integration; traced auth and API edge cases end to end and wrote the in-app copy for that flow.",
+      "Worked with users on Slack every day and shipped fixes the same day.",
     ],
   },
   {
@@ -185,14 +197,13 @@ export const revisions: readonly Revision[] = [
 export const education = {
   school: "George Mason University",
   degree: "B.S. Computer Science",
-  gpa: 3.75,
   honors: { title: "Dean's List", terms: "Fall 2023 · Spring 2026 · Summer 2026" },
-  scholarship: "Mason Distinction Scholarship",
+  scholarship: "Mason Distinction Scholarship ($72K)",
   coursework: "Data Structures & Algorithms · Database Systems · Machine Learning · Software Engineering · Operating Systems",
   expected: "DEC 2026",
 } as const;
 
-/** SHT 05 — leader-line annotations beside the portrait. */
+/** SHT 05 — leader-line annotations beside the bio. */
 export const aboutAnnotations = [
   "LEETCODE: REGULAR PRACTICE",
   "INTERESTS: SYSTEM DESIGN · AI · DISTRIBUTED · LOW-LEVEL",

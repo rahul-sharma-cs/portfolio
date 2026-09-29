@@ -4,7 +4,6 @@ import { motion, useReducedMotion } from "motion/react";
 import { education, links, revisions } from "@/lib/data";
 import Sheet from "@/components/drafting/sheet";
 import Stamp from "@/components/drafting/stamp";
-import Counter from "@/components/drafting/counter";
 import { RuleX } from "@/components/drafting/rule";
 
 /** Experience + education as a drawing revision-history table. */
@@ -62,10 +61,6 @@ export default function Sheet04Revisions() {
             <RuleX className="mb-5 mt-2" />
             <p className="font-sans text-head-sm font-bold uppercase tracking-tight text-ink">{education.degree}</p>
             <p className="mt-1 text-body-sm text-pencil">{education.school}</p>
-            <p className="mt-5 font-mono text-anno-sm uppercase tracking-[0.14em] text-pencil">GPA</p>
-            <p className="font-sans text-4xl font-extrabold text-ink">
-              <Counter value={education.gpa} decimals={2} />
-            </p>
             <div className="mt-5">
               {/* One impression, two cells: the label on the left, the three terms stacked on the
                   right so a new line lands under the first term, never under the label. On the
