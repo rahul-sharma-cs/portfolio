@@ -4,7 +4,7 @@ Personal portfolio in two versions, switched from the V1/V2 control in the
 bottom-right corner:
 
 - **V1, at `/`** — a plain, single-column page: who I am, work, projects,
-  education. Plain CSS, one serif, no client JavaScript.
+  education. Plain CSS, one serif, no client components.
 - **V2, at `/v2`** — the same story drafted as an engineering drawing set:
   vellum paper and graph grid by day, cyanotype blueprint by night, six sheets.
 

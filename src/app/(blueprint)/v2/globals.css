@@ -120,27 +120,8 @@ html.theme-fade * {
   }
 }
 
-/* V1/V2 switch — names for the cross-document morph (see plain.css) */
-.version-switch { view-transition-name: version-switch; }
-.version-switch .thumb { view-transition-name: version-thumb; }
+/* V1/V2 switch — names + version wipe live in components/version-switch.css */
 /* Any other view transition (the theme wipe) must reveal the switch with the page. */
 html:active-view-transition:not(:active-view-transition-type(version-switch)) :is(.version-switch, .version-switch .thumb) {
   view-transition-name: none;
-}
-
-@view-transition { navigation: auto; types: version-switch; }
-html:active-view-transition-type(version-switch)::view-transition-old(root) { animation: none; }
-html:active-view-transition-type(version-switch)::view-transition-new(root) {
-  animation: version-wipe 560ms cubic-bezier(0.65, 0, 0.35, 1) both;
-}
-html:active-view-transition-type(version-switch)::view-transition-group(version-thumb) {
-  animation-duration: 420ms;
-  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-@keyframes version-wipe {
-  from { clip-path: circle(0% at 96% 92%); }
-  to { clip-path: circle(150% at 96% 92%); }
-}
-@media (prefers-reduced-motion: reduce) {
-  @view-transition { navigation: none; }
 }

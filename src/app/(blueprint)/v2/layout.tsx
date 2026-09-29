@@ -13,7 +13,7 @@ import { siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rahulsharma-cs.site"),
-  title: `${siteConfig.name} — ${siteConfig.role}`,
+  title: `${siteConfig.name} — Drawing Set`,
   description: siteConfig.description,
   alternates: { canonical: "/v2" },
   openGraph: {

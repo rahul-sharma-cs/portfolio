@@ -1,7 +1,9 @@
+import "./version-switch.css";
+
 /**
  * V1/V2 switch, fixed at the same spot on both versions so it never moves when
  * the page does. Plain links: V1 and V2 have different root layouts, so the
- * browser does a full navigation and the CSS @view-transition rules animate it.
+ * browser does a full navigation and version-switch.css (@view-transition) animates it.
  * V1 is styled by plain.css (no Tailwind there); V2 by Tailwind utilities.
  */
 const POSITION = { right: 12, bottom: 44 } as const;
@@ -22,7 +24,7 @@ export default function VersionSwitch({ current }: { current: "v1" | "v2" }) {
               {it.label}
             </span>
           ) : (
-            <a key={it.key} href={it.href} title={it.title}>
+            <a key={it.key} href={it.href} title={it.title} aria-label={`${it.label}, ${it.title}`}>
               {it.label}
             </a>
           ),
@@ -44,7 +46,7 @@ export default function VersionSwitch({ current }: { current: "v1" | "v2" }) {
             {it.label}
           </span>
         ) : (
-          <a key={it.key} href={it.href} title={it.title} className="relative grid h-[30px] place-items-center text-redline hover:bg-redline/10">
+          <a key={it.key} href={it.href} title={it.title} aria-label={`${it.label}, ${it.title}`} className="relative grid h-[30px] place-items-center text-redline hover:bg-redline/10">
             {it.label}
           </a>
         ),
