@@ -8,6 +8,7 @@ import SheetGrid from "@/components/drafting/sheet-grid";
 import MeasurementNav from "@/components/chrome/measurement-nav";
 import SheetFooter from "@/components/chrome/sheet-footer";
 import CrosshairCursor from "@/components/chrome/crosshair-cursor";
+import VersionSwitch from "@/components/version-switch";
 import { siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
@@ -64,6 +65,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <main id="main">{children}</main>
             <SheetFooter />
             <CrosshairCursor />
+            <VersionSwitch current="v2" />
           </ActiveSectionContextProvider>
         </ThemeContextProvider>
       </body>

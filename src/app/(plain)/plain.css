@@ -96,3 +96,58 @@ footer {
   h1 { font-size: 1.5rem; }
   .photos { width: 45%; margin: 4px 0 12px 18px; }
 }
+
+/* V1/V2 switch — same position as on V2 (inline style in the component) */
+.version-switch {
+  position: fixed;
+  z-index: 45;
+  width: 40px;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--rule);
+  background: var(--bg);
+  font-size: 13px;
+  font-weight: 600;
+  view-transition-name: version-switch;
+}
+.version-switch .thumb {
+  position: absolute;
+  left: 4px;
+  right: 4px;
+  top: 4px;
+  height: 30px;
+  background: var(--text);
+  view-transition-name: version-thumb;
+}
+.version-switch a,
+.version-switch a:visited,
+.version-switch span[aria-current] {
+  position: relative;
+  display: grid;
+  place-items: center;
+  height: 30px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.version-switch span[aria-current] { color: var(--bg); }
+.version-switch a:hover { color: var(--link); }
+
+/* Version change: radial wipe from the switch corner + sliding thumb.
+   Percentages only — Chrome 152 mis-scales px clip-path on this pseudo. */
+@view-transition { navigation: auto; types: version-switch; }
+html:active-view-transition-type(version-switch)::view-transition-old(root) { animation: none; }
+html:active-view-transition-type(version-switch)::view-transition-new(root) {
+  animation: version-wipe 560ms cubic-bezier(0.65, 0, 0.35, 1) both;
+}
+html:active-view-transition-type(version-switch)::view-transition-group(version-thumb) {
+  animation-duration: 420ms;
+  animation-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+@keyframes version-wipe {
+  from { clip-path: circle(0% at 96% 92%); }
+  to { clip-path: circle(150% at 96% 92%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  @view-transition { navigation: none; }
+}

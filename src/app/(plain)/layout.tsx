@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./plain.css";
 import { newsreader } from "./font";
 import { siteConfig } from "@/lib/data";
+import VersionSwitch from "@/components/version-switch";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rahulsharma-cs.site"),
@@ -23,7 +24,10 @@ export const viewport: Viewport = { themeColor: "#FAF9F5" };
 export default function PlainLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={newsreader.variable}>
-      <body>{children}</body>
+      <body>
+        {children}
+        <VersionSwitch current="v1" />
+      </body>
     </html>
   );
 }
